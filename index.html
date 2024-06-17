@@ -50,9 +50,13 @@
             background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 8px;
+            display: none; /* Initially hide all containers */
+        }
+        .container.active {
+            display: block; /* Display active container */
         }
         .profile-picture {
-            max-width: 100%;
+            max-width: 150px; /* Adjust profile picture size */
             border-radius: 50%;
             margin-bottom: 20px;
         }
@@ -69,7 +73,7 @@
 </head>
 <body>
     <header>
-        <img src="download (1).jpg" alt="Obaude Ayodeji Michael" class="profile-picture">
+        <img src="deji.jpg" alt="Obaude Ayodeji Michael" class="profile-picture">
         <h1>Obaude Ayodeji Michael</h1>
         <p>Mobile: +234 7061009114 | Email: obaudeayodejimichael@gmail.com<br>
            Address: Ondo, Nigeria</p>
@@ -154,12 +158,7 @@
         <ul>
             <li>Excelled in accurately managing student records and administrative data.</li>
             <li>Implemented data validation rules, reducing errors by 0% through automation.</li>
-            <li>Automated workflows, saving hours weekly and enhancing efficiency.</li>
-        </ul>
-        
-        <h3>Mathematics Teacher | June 2019 - August 2023</h3>
-        <p>
-            
+            <li>Automated workflows, saving hours weekly and enhancing efficiency.</li
             <li>Delivered engaging mathematics lessons to students, fostering a supportive learning environment.</li>
         </ul>
         
@@ -174,7 +173,7 @@
     </section>
     
     <section id="certifications" class="container">
-        <h2>Certification</h2>
+        <h2>Certifications</h2>
         
         <p>OneCampus Cert-INTL – Data Science Professional Program | July 2023</p>
         
