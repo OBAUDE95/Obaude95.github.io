@@ -25,17 +25,20 @@
         }
         .tabs {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             margin: 20px;
         }
         .tab {
-            margin: 0 10px;
+            margin: 5px;
             padding: 10px 20px;
             background-color: #ff5733;
             color: white;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            flex: 1 1 auto;
+            text-align: center;
         }
         .tab:hover {
             background-color: #e64a19;
@@ -57,6 +60,7 @@
         }
         .profile-picture {
             max-width: 150px; /* Adjust profile picture size */
+            width: 100%;
             border-radius: 50%;
             margin-bottom: 20px;
         }
@@ -112,6 +116,18 @@
         }
         .form-group button:hover {
             background-color: #e64a19;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .tab {
+                padding: 5px 10px;
+                font-size: 0.9rem;
+            }
+            .footer {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -203,7 +219,7 @@
         </div>
     </section>
     
-    <section id="education" class="container">
+        <section id="education" class="container">
         <h2 class="section-title">Education</h2>
         <div>
             <h3>Bachelor of Applied Science in Education (Economics)</h3>
@@ -231,7 +247,6 @@
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Your
                     <label for="email">Your Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
@@ -271,3 +286,4 @@
     </script>
 </body>
 </html>
+
