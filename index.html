@@ -9,174 +9,109 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            background-color: #f4f4f4;
         }
         header {
-            background-color: #007bff;
-            color: white;
+            background-color: #333;
+            color: #fff;
             padding: 10px 0;
             text-align: center;
         }
-        nav {
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #0056b3;
+        header img {
+            height: 50px; /* Adjust the height of the logo */
+            vertical-align: middle;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-        h1, h2 {
-            color: #007bff;
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
         }
         .services {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .service {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 10px;
-            flex: 1;
-            min-width: 200px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .services h2 {
+            margin-top: 0;
         }
-        .service:hover {
-            background-color: #e2e6ea;
+        .service-item {
+            margin-bottom: 20px;
         }
-        .service img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .contact-form {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 60px; /* Adjust margin to prevent overlap with footer */
-        }
-        .contact-form input, .contact-form textarea {
+        .service-item img {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 5px;
         }
-        .contact-form button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
+        .contact {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
         }
-        .contact-form button:hover {
-            background-color: #0056b3;
+        .contact h2 {
+            margin-top: 0;
         }
         footer {
-            background-color: #007bff;
-            color: white;
+            background-color: #333;
+            color: #fff;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            width: 100%;
+            position: relative;
             bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: #ffeb3b;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .contact-button {
+            background-color: #25d366; /* WhatsApp color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Sammylee Venture</h1>
-        <p>Your one-stop solution for printing, photocopying, and online registration</p>
+        <div class="container">
+            <img src="https://www.kindpng.com/picc/m/193-1935305_wellness-logo-hd-png-download.png" alt="Sammylee Venture Logo">
+        </div>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="service" onclick="redirectToWhatsApp('Printing Services')">
-                <img src="https://images.pexels.com/photos/269370/pexels-photo-269370.jpeg" alt="Printing Services">
-                <h3>Printing Services</h3>
-                <p>We offer high-quality printing services for all your needs. From business cards to brochures, we ensure top-notch quality.</p>
+    <div class="container">
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-item">
+                <img src="https://images.unsplash.com/photo-1603730827014-1f4820736e95" alt="Printing Service">
+                <p><a href="https://wa.me/+2349033970718?text=I'm%20interested%20in%20your%20printing%20service" class="contact-button">Contact for Printing</a></p>
             </div>
-            <div class="service" onclick="redirectToWhatsApp('Photocopying')">
-                <img src="https://images.pexels.com/photos/3981174/pexels-photo-3981174.jpeg" alt="Photocopying">
-                <h3>Photocopying</h3>
-                <p>Our photocopying services are fast and reliable, ensuring that you get your documents copied efficiently and accurately.</p>
+            <div class="service-item">
+                <img src="https://images.unsplash.com/photo-1612801504770-6b02420dc737" alt="Photocopy Service">
+                <p><a href="https://wa.me/+2349033970718?text=I'm%20interested%20in%20your%20photocopy%20service" class="contact-button">Contact for Photocopy</a></p>
             </div>
-            <div class="service" onclick="redirectToWhatsApp('Online Registration')">
-                <img src="https://images.pexels.com/photos/4386364/pexels-photo-4386364.jpeg" alt="Online Registration">
-                <h3>Online Registration</h3>
-                <p>Streamline your registration processes with our online registration services. Simple, fast, and user-friendly.</p>
+            <div class="service-item">
+                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" alt="Online Registration">
+                <p><a href="https://wa.me/+2349033970718?text=I'm%20interested%20in%20your%20online%20registration%20service" class="contact-button">Contact for Online Registration</a></p>
             </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-form">
-            <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="button" onclick="submitForm()">Send Message</button>
-            </form>
-        </div>
-    </section>
-
+        </section>
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>For more details or to get in touch, please use the contact buttons below:</p>
+            <a href="https://wa.me/+2349033970718" class="contact-button">Chat on WhatsApp</a>
+        </section>
+    </div>
     <footer>
-        <p>&copy; 2024 Sammylee Venture | Akungba, AAUA | <a href="https://wa.me/+2349033970718" target="_blank" style="color: white;">Contact us on WhatsApp</a></p>
+        <p>© 2024 Sammylee Venture | Akungba, AAUA | Contact us on <a href="https://wa.me/+2349033970718">WhatsApp</a></p>
     </footer>
-
-    <script>
-        function redirectToWhatsApp(service) {
-            const phoneNumber = "+2349033970718";
-            const message = encodeURIComponent(`Hi, I'm interested in ${service}. Please provide more details.`);
-            const url = `https://wa.me/${phoneNumber}?text=${message}`;
-            window.location.href = url;
-        }
-
-        function submitForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            const phoneNumber = "+2349033970718";
-            const whatsappMessage = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-            const url = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
-            window.location.href = url;
-        }
-    </script>
 </body>
 </html>
