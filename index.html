@@ -3,115 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sammylee Venture</title>
+    <title>Obaude Ayodeji Michael - Data Analyst Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
+            color: #333;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
+            background-color: #ff5733;
+            color: white;
+            padding: 20px;
             text-align: center;
         }
-        header img {
-            height: 50px; /* Adjust the height of the logo */
-            vertical-align: middle;
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .tab {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex: 1 1 auto;
+            text-align: center;
+        }
+        .tab:hover {
+            background-color: #e64a19;
+        }
+        .tab.active {
+            background-color: #e64a19;
         }
         .container {
-            width: 80%;
+            max-width: 800px;
             margin: auto;
-            overflow: hidden;
-        }
-        .services {
-            background: #fff;
             padding: 20px;
-            border-radius: 5px;
+            background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            display: none; /* Initially hide all containers */
         }
-        .services h2 {
-            margin-top: 0;
+        .container.active {
+            display: block; /* Display active container */
         }
-        .service-item {
+        .profile-picture {
+            max-width: 150px; /* Adjust profile picture size */
+            width: 100%;
+            border-radius: 50%;
             margin-bottom: 20px;
         }
-        .service-item img {
-            width: 100%;
-            border-radius: 5px;
-        }
-        .contact {
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin-top: 20px;
-        }
-        .contact h2 {
-            margin-top: 0;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
+        .footer {
             text-align: center;
-            padding: 10px 0;
-            position: relative;
+            padding: 10px;
+            background-color: #ff5733;
+            color: white;
+            position: fixed;
             bottom: 0;
             width: 100%;
         }
-        footer a {
-            color: #ffeb3b;
-            text-decoration: none;
+        .section-title {
+            color: #ff5733;
+            border-bottom: 2px solid #ff5733;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
         }
-        footer a:hover {
-            text-decoration: underline;
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
         }
-        .contact-button {
-            background-color: #25d366; /* WhatsApp color */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        .form-group button {
+            background-color: #ff5733;
             color: white;
-            padding: 10px 20px;
             border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            text-align: center;
-            display: block;
-            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #e64a19;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .tab {
+                padding: 5px 10px;
+                font-size: 0.9rem;
+            }
+            .footer {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6670907c9a809f19fb3ebd99/1i0jr8ptt';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
     <header>
-        <div class="container">
-            <img src="https://www.kindpng.com/picc/m/193-1935305_wellness-logo-hd-png-download.png" alt="Sammylee Venture Logo">
-        </div>
+        <img src="deji.jpg" alt="Obaude Ayodeji Michael" class="profile-picture">
+        <h1>Obaude Ayodeji Michael</h1>
+        <p>Email: obaudeayodejimichael@gmail.com<br>
+           Address: Ondo, Nigeria</p>
     </header>
-    <div class="container">
-        <section class="services">
-            <h2>Our Services</h2>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1603730827014-1f4820736e95" alt="Printing Service">
-                <p><a href="https://wa.me/+2349033970718?text=I'm%20interested%20in%20your%20printing%20service" class="contact-button">Contact for Printing</a></p>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1612801504770-6b02420dc737" alt="Photocopy Service">
-                <p><a href="https://wa.me/+2349033970718?text=I'm%20interested%20in%20your%20photocopy%20service" class="contact-button">Contact for Photocopy</a></p>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" alt="Online Registration">
-                <p><a href="https://wa.me/+2349033970718?text=I'm%20interested%20in%20your%20online%20registration%20service" class="contact-button">Contact for Online Registration</a></p>
-            </div>
-        </section>
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <p>For more details or to get in touch, please use the contact buttons below:</p>
-            <a href="https://wa.me/+2349033970718" class="contact-button">Chat on WhatsApp</a>
-        </section>
+    
+    <div class="tabs">
+        <div class="tab active" data-tab="summary">Profile Summary</div>
+        <div class="tab" data-tab="projects">Projects</div>
+        <div class="tab" data-tab="skills">Skills</div>
+        <div class="tab" data-tab="experience">Experience</div>
+        <div class="tab" data-tab="education">Education</div>
+        <div class="tab" data-tab="certifications">Certifications</div>
+        <div class="tab" data-tab="contact">Contact Me</div>
     </div>
-    <footer>
-        <p>© 2024 Sammylee Venture | Akungba, AAUA | Contact us on <a href="https://wa.me/+2349033970718">WhatsApp</a></p>
+    
+    <section id="summary" class="container active">
+        <h2 class="section-title">Profile Summary</h2>
+        <p>Highly collaborative and integrity-driven Data Analyst and Python Script Writer with a robust foundation in data analysis, advanced proficiency in Python scripting, and a proven track record of delivering insightful solutions through teamwork and creative problem-solving. Expertise includes data wrangling, exploration, and feature engineering, highlighted by successful projects such as comprehensive analysis of the Titanic dataset and crafting interactive dashboards using Python Plotly.</p>
+    </section>
+    
+    <section id="projects" class="container">
+        <h2 class="section-title">Projects</h2>
+        <div>
+            <h3>Financial Analysis Dashboard | Independent Project</h3>
+            <p><strong>Date:</strong> October 2023</p>
+            <ul>
+                <li>Conducted comprehensive data analysis on financial datasets, focusing on trends and insights.</li>
+                <li>Developed interactive dashboards using Python Plotly for effective data visualization.</li>
+                <li>Implemented data wrangling, cleaning, and feature engineering to prepare datasets for analysis.</li>
+                <li>Built and evaluated data models to extract meaningful information for decision-making.</li>
+                <li>Deployment of Dashboard on Render.</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Automated Student Registration Data Entry</h3>
+            <p><strong>Role:</strong> Python Script Writer | <strong>Duration:</strong> Ongoing</p>
+            <ul>
+                <li>Designed and implemented a suite of Python scripts to automate the student registration data entry process, significantly improving efficiency and accuracy.</li>
+                <li>Utilized Python technologies including Tkinter for the user interface, Pandas for data manipulation, and the Os library for system interaction.</li>
+                <li>Ensured optimal script performance through adherence to best practices and coding standards, creating clean and efficient code.</li>
+                <li>Actively pursued continuous learning to stay updated on the latest Python scripting techniques, incorporating them into the project.</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="skills" class="container">
+        <h2 class="section-title">Skills</h2>
+        <ul>
+            <li>Data Analysis</li>
+            <li>Python Scripting</li>
+            <li>Data Visualization (Python Plotly)</li>
+            <li>Microsoft Excel</li>
+            <li>Python Tutor (Assisting and teaching Python programming)</li>
+            <li>Collaboration</li>
+            <li>Problem-Solving</li>
+            <li>Integrity</li>
+        </ul>
+    </section>
+    
+    <section id="experience" class="container">
+        <h2 class="section-title">Professional Experience</h2>
+        <div>
+            <h3>ICT Assistant & Data Entry | Oroke High School | Akungba, Ondo State | February 2018</h3>
+            <ul>
+                <li>Excelled in accurately managing student records and administrative data.</li>
+                <li>Implemented data validation rules, reducing errors by 0% through automation.</li>
+                <li>Automated workflows, saving hours weekly and enhancing efficiency.</li>
+            </ul>
+        </div>
+    </section>
+    
+        <section id="education" class="container">
+        <h2 class="section-title">Education</h2>
+        <div>
+            <h3>Bachelor of Applied Science in Education (Economics)</h3>
+            <p>Adekunle Ajasin University, Akungba Akoko, Ondo State | 2019</p>
+        </div>
+        <div>
+            <h3>Postgraduate Diploma in Computer Science</h3>
+            <p>Achievers University, Owo, Ondo State | Ongoing</p>
+        </div>
+    </section>
+    
+    <section id="certifications" class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div>
+            <p>OneCampus Cert-INTL – Data Science Professional Program | July 2023</p>
+        </div>
+    </section>
+    
+    <section id="contact" class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-form">
+            <form action="mailto:obaudeayodejimichael@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Obaude Ayodeji Michael. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Script to handle tab switching
+        const tabs = document.querySelectorAll('.tab');
+        const containers = document.querySelectorAll('.container');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+
+                // Remove active class from all tabs and containers
+                tabs.forEach(tab => tab.classList.remove('active'));
+                containers.forEach(container => container.classList.remove('active'));
+
+                // Add active class to the clicked tab and corresponding container
+                tab.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
+
+
