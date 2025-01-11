@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Animated Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">MyLogo</div>
+            <div class="logo">MyPortfolio</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -18,30 +19,30 @@
             </ul>
         </nav>
     </header>
-    
+
     <section id="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>I'm a passionate developer bringing ideas to life with code.</p>
-        <a href="#projects" class="btn">View Projects</a>
+        <h1 class="animate-text">Welcome to My Animated Portfolio</h1>
+        <p class="animate-text">Scroll down to explore my projects and skills.</p>
+        <a href="#projects" class="btn">Discover More</a>
     </section>
 
     <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a developer with expertise in creating responsive and dynamic web applications.</p>
+        <h2 class="animate-text">About Me</h2>
+        <p class="animate-text">I am a creative developer passionate about designing interactive web experiences.</p>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
+        <h2 class="animate-text">Projects</h2>
         <div class="projects-container">
-            <div class="project-card">
+            <div class="project-card animate-card">
                 <h3>Project 1</h3>
                 <p>Description of the project.</p>
             </div>
-            <div class="project-card">
+            <div class="project-card animate-card">
                 <h3>Project 2</h3>
                 <p>Description of the project.</p>
             </div>
-            <div class="project-card">
+            <div class="project-card animate-card">
                 <h3>Project 3</h3>
                 <p>Description of the project.</p>
             </div>
@@ -49,9 +50,9 @@
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+        <h2 class="animate-text">Contact</h2>
+        <p class="animate-text">Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p class="animate-text">GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
     </section>
 
     <footer>
