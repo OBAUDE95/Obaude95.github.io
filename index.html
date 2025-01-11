@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obaude Ayodeji Michael - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <style>
         /* General Styling */
@@ -121,28 +120,12 @@
             }
         }
 
-        /* About Section Styling */
-        #about {
-            background-color: #121212;
-            color: #f9f9f9;
-            padding: 40px 20px;
+        /* Text Glow on Hover */
+        #about h2:hover {
+            color: #00bcd4;
+            text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #00bcd4;
         }
 
-        .about-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .about-container p {
-            width: 60%;
-        }
-
-        .about-image img {
-            width: 30%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
     </style>
 </head>
 <body>
@@ -185,14 +168,9 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <div class="about-container">
-            <p>
-                As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems. I am committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
-            </p>
-            <div class="about-image">
-                <img src="deji.jpg" alt="Obaude Ayodeji Michael" />
-            </div>
-        </div>
+        <p>
+            As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems. I am committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
+        </p>
     </section>
 
     <section id="skills">
