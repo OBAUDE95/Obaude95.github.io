@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Portfolio</title>
+    <title>Data Science Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Include GSAP and ScrollTrigger plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">MyPortfolio</div>
+            <div class="logo">DS Portfolio</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -21,36 +23,38 @@
     </header>
 
     <section id="hero">
-        <h1 class="animate-text">Welcome to My Animated Portfolio</h1>
-        <p class="animate-text">Scroll down to explore my projects and skills.</p>
-        <a href="#projects" class="btn">Discover More</a>
+        <div class="hero-content">
+            <h1 class="animate-text">Welcome to My Data Science Portfolio</h1>
+            <p class="animate-text">Uncover insights, solve problems, and build the future with data.</p>
+            <a href="#projects" class="btn">Explore My Work</a>
+        </div>
     </section>
 
     <section id="about">
         <h2 class="animate-text">About Me</h2>
-        <p class="animate-text">I am a creative developer passionate about designing interactive web experiences.</p>
+        <p class="animate-text">I'm a data scientist skilled in Python, machine learning, and visualization. Passionate about uncovering stories hidden in data.</p>
     </section>
 
     <section id="projects">
         <h2 class="animate-text">Projects</h2>
         <div class="projects-container">
             <div class="project-card animate-card">
-                <h3>Project 1</h3>
-                <p>Description of the project.</p>
+                <h3>Customer Segmentation</h3>
+                <p>Using K-Means clustering to identify customer groups for better marketing strategies.</p>
             </div>
             <div class="project-card animate-card">
-                <h3>Project 2</h3>
-                <p>Description of the project.</p>
+                <h3>Sales Forecasting</h3>
+                <p>Developed a time-series model to predict future sales trends with 95% accuracy.</p>
             </div>
             <div class="project-card animate-card">
-                <h3>Project 3</h3>
-                <p>Description of the project.</p>
+                <h3>Fraud Detection</h3>
+                <p>Built a machine learning model to detect fraudulent transactions in real-time.</p>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="animate-text">Contact</h2>
+        <h2 class="animate-text">Get in Touch</h2>
         <p class="animate-text">Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
         <p class="animate-text">GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
     </section>
