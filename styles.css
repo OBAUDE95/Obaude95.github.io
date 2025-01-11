@@ -7,7 +7,6 @@ body {
     color: #ffffff;
 }
 
-/* Header */
 header {
     background: #282c34;
     padding: 15px 20px;
@@ -48,26 +47,19 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 80px; /* To avoid header overlap */
+    padding-top: 80px;
     text-align: center;
-    background: #20232a;
 }
 
 .hero-content {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 50px;
 }
 
-.text-content {
-    max-width: 600px;
-}
-
 .text-content h1 {
     font-size: 2rem;
-    font-weight: normal;
     color: #61dafb;
 }
 
@@ -81,62 +73,78 @@ header {
     line-height: 1.6;
 }
 
-.dynamic-text {
-    display: inline-block;
-    position: relative;
-    font-weight: bold; /* Optional: Highlight the dynamic text */
-    animation: textSwap 4s infinite alternate;
+.animated-role {
+    animation: role-switch 3s infinite;
+    font-weight: bold;
+    color: #61dafb;
 }
 
-@keyframes textSwap {
+@keyframes role-switch {
     0%, 50% {
         content: "Data Scientist";
     }
-    100% {
+    50%, 100% {
         content: "Data Analyst";
     }
 }
 
-.dynamic-text::before {
-    content: "Data Scientist";
-    animation: textSwap 4s infinite alternate;
+/* About Section */
+.about-section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.social-icons {
-    margin: 20px 0;
+.about-container {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
 
-.social-icons img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s;
-}
-
-.social-icons img:hover {
-    transform: scale(1.2);
-}
-
-.btn {
-    background: #61dafb;
-    color: #20232a;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #35b3f2;
-}
-
-/* Profile Image */
-.profile-image img {
-    width: 200px;
-    height: 200px;
+.profile-picture img {
     border-radius: 50%;
     border: 5px solid #61dafb;
     box-shadow: 0 0 20px #61dafb;
+}
+
+.about-content h2 span {
+    color: #61dafb;
+}
+
+/* Skills Section */
+.skills-section {
+    background-color: #20232a;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.skills-section h2 span {
+    color: #61dafb;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.skill-card {
+    background-color: #282c34;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #61dafb;
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
 }
