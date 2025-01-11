@@ -14,17 +14,23 @@
             color: #f9f9f9;
         }
 
+        section {
+            padding: 40px 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
         /* Project Section Styling */
         #projects {
             background-color: #121212;
-            padding: 40px 20px;
             text-align: center;
         }
 
         #projects h2 {
-            font-size: 2rem;
             color: #ffffff;
-            margin-bottom: 20px;
         }
 
         .project-card {
@@ -65,7 +71,36 @@
             animation: flyIn 0.7s ease forwards;
         }
 
-        /* Loading Spinner */
+        /* Skills Section Animation */
+        .skill {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            color: #00bcd4;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .skill.show {
+            animation: flyIn 0.7s ease forwards;
+        }
+
+        /* Contact Section Styling */
+        #contact {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #contact a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        /* Spinner */
         .spinner {
             display: none;
             margin: 0 auto 20px;
@@ -125,6 +160,34 @@
         </div>
     </section>
 
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems. I am committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div id="skills-container">
+            <div class="skill">Python</div>
+            <div class="skill">Data Science</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">Deep Learning</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Pandas</div>
+            <div class="skill">NumPy</div>
+            <div class="skill">Scikit-learn</div>
+            <div class="skill">TensorFlow</div>
+            <div class="skill">PyTorch</div>
+            <div class="skill">Data Visualization</div>
+            <div class="skill">Statistical Analysis</div>
+            <div class="skill">Git</div>
+            <div class="skill">FastAPI</div>
+            <div class="skill">Docker</div>
+        </div>
+    </section>
+
     <section id="projects">
         <h2>Projects</h2>
         <div class="spinner" id="spinner"></div>
@@ -152,6 +215,12 @@
         </div>
     </section>
 
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:obaudeayodejimichael@gmail.com">obaudeayodejimichael@gmail.com</a></p>
+        <p>Phone: <a href="tel:+2347061009114">+234 706 100 9114</a></p>
+    </section>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             new Typed('#typed-text', {
@@ -161,7 +230,7 @@
                 loop: true
             });
 
-            // Loading Animation
+            // Loading Animation for Projects
             const spinner = document.getElementById('spinner');
             const projectContainer = document.getElementById('project-container');
             const projectCards = document.querySelectorAll('.project-card');
@@ -174,6 +243,12 @@
                     setTimeout(() => card.classList.add('show'), index * 200);
                 });
             }, 1000);
+
+            // Animation for Skills
+            const skills = document.querySelectorAll('.skill');
+            skills.forEach((skill, index) => {
+                setTimeout(() => skill.classList.add('show'), index * 100);
+            });
         });
     </script>
 </body>
