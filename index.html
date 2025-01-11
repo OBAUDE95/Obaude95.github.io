@@ -6,6 +6,44 @@
     <title>Obaude Ayodeji Michael - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <style>
+        /* Add animations for project fly-in effect */
+        @keyframes flyIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .project-section {
+            animation: flyIn 1s ease-out;
+        }
+
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            background: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .project-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -53,10 +91,10 @@
             </div>
             <div class="about-text">
                 <p>
-                    As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong> with a strong foundation in Computer Science, I bring a unique blend of technical expertise and analytical thinking to every project.
+                    As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems.
                 </p>
                 <p>
-                    I'm constantly expanding my knowledge in emerging technologies and best practices in data science, ensuring that I stay at the forefront of industry developments. My goal is to leverage data science and machine learning to create innovative solutions that make a meaningful impact.
+                    I'm committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
                 </p>
                 <a href="#experience" class="btn">View My Experience</a>
             </div>
@@ -84,57 +122,55 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="project-section">
         <h2>Projects</h2>
-        <div class="skills-container">
-            <div class="skill">
-                Langchain Models
-                <p>Implemented state-of-the-art language models using Langchain, enhancing NLP capabilities for dynamic applications.</p>
-            </div>
-            <div class="skill">
-                Financial Report Summarizer
-                <p>Built a Dash application to summarize complex financial reports, providing actionable insights for stakeholders.</p>
-            </div>
-            <div class="skill">
-                Spam and Ham Detection
-                <p>Developed a natural language processing model to classify emails as spam or ham with high precision.</p>
-            </div>
-            <div class="skill">
-                Unsupervised Learning for Institutional Classification
-                <p>Applied unsupervised learning techniques to categorize institutions based on unique metrics and patterns.</p>
-            </div>
-            <div class="skill">
-                Predicting Crime Type and District in Chicago
-                <p>Leveraged machine learning to predict crime types and districts using Chicago's crime dataset.</p>
-            </div>
-            <div class="skill">
-                Diabetes Classification Using Logistic Regression
-                <p>Designed a logistic regression model to predict diabetes, aiding early diagnosis and health interventions.</p>
-            </div>
-            <div class="skill">
-                House Price Prediction in Lagos
-                <p>Created a Dash-based web app to predict house prices in Lagos, providing insights for real estate investments.</p>
-            </div>
-            <div class="skill">
-                Titanic Survival Prediction Dashboard
-                <p>Interactive dashboard predicting Titanic survival rates based on passenger demographics and other features.</p>
-            </div>
-            <div class="skill">
-                Plotly & Dash Portfolio
-                <p>Showcased proficiency in Plotly and Dash by building dashboards for Tesla stock analysis, Jiji car data, and more.</p>
-            </div>
-            <div class="skill">
-                American Tower Corporation Dashboard
-                <p>Monthly stock data visualization for American Tower Corporation, highlighting trends and investment opportunities.</p>
-            </div>
-            <div class="skill">
-                Tips Analysis Dashboard
-                <p>Analyzed tipping behavior trends using interactive visualizations to derive actionable business insights.</p>
-            </div>
-            <div class="skill">
-                Obaude GitHub Portfolio Project
-                <p>Centralized repository showcasing diverse Python and data science projects, reflecting technical expertise and creativity.</p>
-            </div>
+        <div class="project-card">
+            <h3>Langchain Models</h3>
+            <p>Enhanced NLP capabilities with state-of-the-art LangChain implementations.</p>
+        </div>
+        <div class="project-card">
+            <h3>Financial Report Summarizer</h3>
+            <p>Dash app summarizing financial reports for actionable stakeholder insights.</p>
+        </div>
+        <div class="project-card">
+            <h3>Spam and Ham Detection</h3>
+            <p>NLP model classifying emails as spam or ham with high accuracy.</p>
+        </div>
+        <div class="project-card">
+            <h3>Unsupervised Learning for Classification</h3>
+            <p>Automated institutional categorization with unsupervised ML techniques.</p>
+        </div>
+        <div class="project-card">
+            <h3>Crime Type Prediction</h3>
+            <p>Predicted crime types and districts in Chicago using ML algorithms.</p>
+        </div>
+        <div class="project-card">
+            <h3>Diabetes Classification</h3>
+            <p>Logistic regression model aiding early diabetes diagnosis.</p>
+        </div>
+        <div class="project-card">
+            <h3>House Price Prediction</h3>
+            <p>Dash app forecasting Lagos house prices for real estate insights.</p>
+        </div>
+        <div class="project-card">
+            <h3>Titanic Survival Dashboard</h3>
+            <p>Interactive dashboard visualizing Titanic survival predictions.</p>
+        </div>
+        <div class="project-card">
+            <h3>Plotly & Dash Portfolio</h3>
+            <p>Collection of interactive dashboards showcasing data visualization skills.</p>
+        </div>
+        <div class="project-card">
+            <h3>American Tower Dashboard</h3>
+            <p>Monthly stock trend visualizations for informed investment decisions.</p>
+        </div>
+        <div class="project-card">
+            <h3>Tips Analysis Dashboard</h3>
+            <p>Interactive dashboard analyzing tipping behavior and trends.</p>
+        </div>
+        <div class="project-card">
+            <h3>GitHub Portfolio</h3>
+            <p>Comprehensive repository of Python and data science projects.</p>
         </div>
     </section>
 
