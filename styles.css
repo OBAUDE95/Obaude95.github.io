@@ -1,25 +1,29 @@
-/* General Styling */
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #1f1c2c, #928dab);
-    color: #fff;
+    background: #20232a;
+    color: #ffffff;
 }
 
 /* Header */
 header {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px 20px;
+    background: #282c34;
+    padding: 15px 20px;
     position: fixed;
     width: 100%;
+    top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #f39c12;
+    color: #61dafb;
 }
 
 .nav-links {
@@ -35,7 +39,7 @@ header {
 }
 
 .nav-links a:hover {
-    color: #f39c12;
+    color: #61dafb;
 }
 
 /* Hero Section */
@@ -44,51 +48,74 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 80px; /* To avoid header overlap */
     text-align: center;
-    background: linear-gradient(135deg, #141e30, #243b55);
+    background: #20232a;
 }
 
 .hero-content {
-    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.text-content {
+    max-width: 600px;
+}
+
+.text-content h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #61dafb;
+}
+
+.text-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.text-content p {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.social-icons {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
 }
 
 .btn {
-    background: #f39c12;
-    color: white;
+    background: #61dafb;
+    color: #20232a;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    font-weight: bold;
     transition: background 0.3s;
 }
 
 .btn:hover {
-    background: #e67e22;
+    background: #35b3f2;
 }
 
-/* Projects */
-#projects .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    width: 300px;
-    transition: transform 0.3s;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: rgba(0, 0, 0, 0.8);
+/* Profile Image */
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #61dafb;
+    box-shadow: 0 0 20px #61dafb;
 }
