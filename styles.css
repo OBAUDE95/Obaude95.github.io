@@ -81,6 +81,27 @@ header {
     line-height: 1.6;
 }
 
+.dynamic-text {
+    display: inline-block;
+    position: relative;
+    font-weight: bold; /* Optional: Highlight the dynamic text */
+    animation: textSwap 4s infinite alternate;
+}
+
+@keyframes textSwap {
+    0%, 50% {
+        content: "Data Scientist";
+    }
+    100% {
+        content: "Data Analyst";
+    }
+}
+
+.dynamic-text::before {
+    content: "Data Scientist";
+    animation: textSwap 4s infinite alternate;
+}
+
 .social-icons {
     margin: 20px 0;
     display: flex;
