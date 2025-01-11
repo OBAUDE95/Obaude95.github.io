@@ -120,6 +120,29 @@
                 transform: rotate(360deg);
             }
         }
+
+        /* About Section Styling */
+        #about {
+            background-color: #121212;
+            color: #f9f9f9;
+            padding: 40px 20px;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-container p {
+            width: 60%;
+        }
+
+        .about-image img {
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -162,9 +185,14 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>
-            As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems. I am committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
-        </p>
+        <div class="about-container">
+            <p>
+                As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems. I am committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
+            </p>
+            <div class="about-image">
+                <img src="deji.jpg" alt="Obaude Ayodeji Michael" />
+            </div>
+        </div>
     </section>
 
     <section id="skills">
