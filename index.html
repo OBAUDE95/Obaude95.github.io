@@ -7,7 +7,49 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <style>
-        /* Add animations for project fly-in effect */
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #f9f9f9;
+        }
+
+        /* Project Section Styling */
+        #projects {
+            background-color: #121212;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        #projects h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .project-card {
+            display: inline-block;
+            width: calc(33% - 40px);
+            margin: 20px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .project-card h3 {
+            margin: 0 0 10px;
+            color: #00bcd4;
+        }
+
+        .project-card p {
+            margin: 0;
+            color: #cccccc;
+        }
+
+        /* Animation for Project Cards */
         @keyframes flyIn {
             from {
                 transform: translateY(50px);
@@ -19,29 +61,29 @@
             }
         }
 
-        .project-section {
-            animation: flyIn 1s ease-out;
+        .project-card.show {
+            animation: flyIn 0.7s ease forwards;
         }
 
-        .project-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 12px 0;
-            background: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            margin: 0 auto 20px;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #00bcd4;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
 
-        .project-card h3 {
-            margin: 0 0 8px;
-            font-size: 1.2rem;
-            color: #333;
-        }
-
-        .project-card p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #555;
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -83,105 +125,55 @@
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <div class="profile-image">
-                <img src="deji.jpg" alt="Obaude Ayodeji Michael">
-            </div>
-            <div class="about-text">
-                <p>
-                    As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems.
-                </p>
-                <p>
-                    I'm committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
-                </p>
-                <a href="#experience" class="btn">View My Experience</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>My Skills</h2>
-        <div class="skills-container">
-            <div class="skill">Python</div>
-            <div class="skill">Data Science</div>
-            <div class="skill">Machine Learning</div>
-            <div class="skill">Deep Learning</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Pandas</div>
-            <div class="skill">NumPy</div>
-            <div class="skill">Scikit-learn</div>
-            <div class="skill">TensorFlow</div>
-            <div class="skill">PyTorch</div>
-            <div class="skill">Data Visualization</div>
-            <div class="skill">Statistical Analysis</div>
-            <div class="skill">Git</div>
-            <div class="skill">FastAPI</div>
-            <div class="skill">Docker</div>
-        </div>
-    </section>
-
-    <section id="projects" class="project-section">
+    <section id="projects">
         <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Langchain Models</h3>
-            <p>Enhanced NLP capabilities with state-of-the-art LangChain implementations.</p>
-        </div>
-        <div class="project-card">
-            <h3>Financial Report Summarizer</h3>
-            <p>Dash app summarizing financial reports for actionable stakeholder insights.</p>
-        </div>
-        <div class="project-card">
-            <h3>Spam and Ham Detection</h3>
-            <p>NLP model classifying emails as spam or ham with high accuracy.</p>
-        </div>
-        <div class="project-card">
-            <h3>Unsupervised Learning for Classification</h3>
-            <p>Automated institutional categorization with unsupervised ML techniques.</p>
-        </div>
-        <div class="project-card">
-            <h3>Crime Type Prediction</h3>
-            <p>Predicted crime types and districts in Chicago using ML algorithms.</p>
-        </div>
-        <div class="project-card">
-            <h3>Diabetes Classification</h3>
-            <p>Logistic regression model aiding early diabetes diagnosis.</p>
-        </div>
-        <div class="project-card">
-            <h3>House Price Prediction</h3>
-            <p>Dash app forecasting Lagos house prices for real estate insights.</p>
-        </div>
-        <div class="project-card">
-            <h3>Titanic Survival Dashboard</h3>
-            <p>Interactive dashboard visualizing Titanic survival predictions.</p>
-        </div>
-        <div class="project-card">
-            <h3>Plotly & Dash Portfolio</h3>
-            <p>Collection of interactive dashboards showcasing data visualization skills.</p>
-        </div>
-        <div class="project-card">
-            <h3>American Tower Dashboard</h3>
-            <p>Monthly stock trend visualizations for informed investment decisions.</p>
-        </div>
-        <div class="project-card">
-            <h3>Tips Analysis Dashboard</h3>
-            <p>Interactive dashboard analyzing tipping behavior and trends.</p>
-        </div>
-        <div class="project-card">
-            <h3>GitHub Portfolio</h3>
-            <p>Comprehensive repository of Python and data science projects.</p>
+        <div class="spinner" id="spinner"></div>
+        <div id="project-container">
+            <div class="project-card">
+                <h3>Langchain Models</h3>
+                <p>Enhanced NLP capabilities with state-of-the-art LangChain implementations.</p>
+            </div>
+            <div class="project-card">
+                <h3>Financial Report Summarizer</h3>
+                <p>Dash app summarizing financial reports for actionable stakeholder insights.</p>
+            </div>
+            <div class="project-card">
+                <h3>Spam and Ham Detection</h3>
+                <p>NLP model classifying emails as spam or ham with high accuracy.</p>
+            </div>
+            <div class="project-card">
+                <h3>Crime Type Prediction</h3>
+                <p>Predicted crime types and districts in Chicago using ML algorithms.</p>
+            </div>
+            <div class="project-card">
+                <h3>Diabetes Classification</h3>
+                <p>Logistic regression model aiding early diabetes diagnosis.</p>
+            </div>
         </div>
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             new Typed('#typed-text', {
                 strings: ['Data Scientist', 'Python Developer', 'Machine Learning Engineer'],
                 typeSpeed: 50,
                 backSpeed: 30,
                 loop: true
             });
+
+            // Loading Animation
+            const spinner = document.getElementById('spinner');
+            const projectContainer = document.getElementById('project-container');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            spinner.style.display = 'block';
+
+            setTimeout(() => {
+                spinner.style.display = 'none';
+                projectCards.forEach((card, index) => {
+                    setTimeout(() => card.classList.add('show'), index * 200);
+                });
+            }, 1000);
         });
     </script>
 </body>
