@@ -1,76 +1,65 @@
-* {
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background: linear-gradient(120deg, #f39c12, #8e44ad);
+    color: #fff;
 }
 
 header {
-    background: #333;
-    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
     padding: 10px 20px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: #fff;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #00bcd4;
+    color: #f39c12;
 }
 
 #hero {
     height: 100vh;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 .btn {
-    background: #00bcd4;
+    background: #f39c12;
     color: white;
     padding: 10px 20px;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
     text-decoration: none;
     transition: background 0.3s;
 }
 
 .btn:hover {
-    background: #0288d1;
+    background: #e67e22;
 }
 
 #projects .projects-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
     padding: 20px;
 }
 
 .project-card {
-    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    border-radius: 5px;
+    margin: 10px;
+    border-radius: 10px;
     width: 300px;
-    text-align: center;
     transition: transform 0.3s;
 }
 
@@ -80,7 +69,6 @@ header {
 
 footer {
     text-align: center;
-    background: #333;
-    color: white;
     padding: 10px 0;
+    background: rgba(0, 0, 0, 0.8);
 }
