@@ -33,7 +33,7 @@
             color: #ffffff;
         }
 
-        .project-card {
+       .project-card {
             display: inline-block;
             width: calc(33% - 40px);
             margin: 20px;
@@ -45,12 +45,12 @@
             transform: translateY(50px);
         }
 
-        .project-card h3 {
+       .project-card h3 {
             margin: 0 0 10px;
             color: #00bcd4;
         }
 
-        .project-card p {
+       .project-card p {
             margin: 0;
             color: #cccccc;
         }
@@ -67,12 +67,12 @@
             }
         }
 
-        .project-card.show {
+       .project-card.show {
             animation: flyIn 0.7s ease forwards;
         }
 
         /* Skills Section Animation */
-        .skill {
+       .skill {
             display: inline-block;
             margin: 10px;
             padding: 10px 20px;
@@ -84,7 +84,7 @@
             transform: translateY(50px);
         }
 
-        .skill.show {
+       .skill.show {
             animation: flyIn 0.7s ease forwards;
         }
 
@@ -101,7 +101,7 @@
         }
 
         /* Spinner */
-        .spinner {
+       .spinner {
             display: none;
             margin: 0 auto 20px;
             width: 50px;
@@ -128,195 +128,73 @@
             padding: 40px 20px;
         }
 
-        .about-container {
+       .about-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .about-container p {
+       .about-container p {
             width: 60%;
         }
 
-        .about-image img {
+       .about-image img {
             width: 30%;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-
-        /* New Experience Section Styling */
-        #experience {
-            background-color: #121212;
-            padding: 40px 20px;
-        }
-
-        .timeline-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: #00bcd4;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: calc(50% - 40px);
-            animation: fadeIn 0.5s ease-in both;
-            margin-bottom: 20px;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background: #1e1e1e;
-            border-radius: 10px;
-            position: relative;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
-            border-color: #00bcd4;
-        }
-
-        .timeline-content h3 {
-            margin: 0 0 10px 0;
-            color: #00bcd4;
-            font-size: 1.2rem;
-        }
-
-        .timeline-content .date {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        /* Education Section Styling */
-        #education {
-            background-color: #1a1a1a;
-            padding: 40px 20px;
-        }
-
-        .education-card {
-            background: #1e1e1e;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .education-card.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .education-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
-            border-color: #00bcd4;
-        }
-
-        .education-card h3 {
-            color: #00bcd4;
-            margin-bottom: 10px;
-        }
-
-        .education-card .degree {
-            color: #ffffff;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .education-card .details {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Enhanced Input Card Hover Effect */
-        input, textarea {
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        input:hover, textarea:hover {
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
-            border-color: #00bcd4;
-            transform: translateY(-2px);
-        }
-
-        input:focus, textarea:focus {
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
-            border-color: #00bcd4;
-            outline: none;
-        }
-
-        /* Animation Keyframes */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <header>
+        <nav>
+            <div class="logo">Obaude Ayodeji Michael</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section id="hero">
-        <div>
-            <h1>Welcome to My Portfolio</h1>
-            <p id="typed-output"></p>
-            <script>
-                var typed = new Typed("#typed-output", {
-                    strings: ["Data Scientist", "AI Enthusiast", "Tech Innovator", "Lifelong Learner"],
-                    typeSpeed: 100,
-                    backSpeed: 50,
-                    loop: true
-                });
-            </script>
+        <div class="hero-content">
+            <div class="text-content">
+                <h1>HELLO, I'M</h1>
+                <h2>Obaude Ayodeji Michael</h2>
+                <p>I'm a <span id="typed-text"></span></p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/ayodeji-obaude-79b5051b2/" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/OBAUDE95" target="_blank">
+                        <img src="github.png" alt="GitHub">
+                    </a>
+                    <a href="https://x.com/obaudeayodeji" target="_blank">
+                        <img src="twitter.png" alt="Twitter">
+                    </a>
+                </div>
+                <a href="resume.pdf" class="btn" download>Download Resume</a>
+            </div>
+            <div class="profile-image">
+                <img src="deji.jpg" alt="Obaude Ayodeji Michael">
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
+        <h2>About Me</h2>
         <div class="about-container">
+            <p>
+                As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems. I am committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
+            </p>
             <div class="about-image">
-                <img src="your-image.jpg" alt="Your Image">
-            </div>
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>Hello, I'm Obaude Ayodeji Michael. I'm passionate about leveraging technology to solve real-world problems...</p>
+                <img src="deji.jpg" alt="Obaude Ayodeji Michael" />
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience">
         <h2>Work Experience</h2>
         <div class="timeline-container">
@@ -358,34 +236,118 @@
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education">
         <h2>Education</h2>
-        <div class="education-card show">
-            <h3>Bachelor of Science in Computer Science</h3>
-            <div class="degree">University of XYZ</div>
-            <div class="details">Graduated in 2024</div>
-        </div>
-        <div class="education-card show">
-            <h3>Certificate in Data Science</h3>
-            <div class="degree">ALX Africa</div>
-            <div class="details">Completed in 2023</div>
+        <div class="education-container">
+            <div class="education-card">
+                <h3>Achievers University</h3>
+                <div class="degree">Master of Science in Computer Science</div>
+                <div class="details">October 2024 - Present</div>
+            </div>
+            
+            <div class="education-card">
+                <h3>Achievers University</h3>
+                <div class="degree">Postgraduate Diploma in Computer Science</div>
+                <div class="details">CGPA: 4.74</div>
+            </div>
+            
+            <div class="education-card">
+                <h3>Adekunle Ajasin University</h3>
+                <div class="degree">Bachelor of Science in Economics Education</div>
+                <div class="details">Second Class Upper</div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div id="skills-container">
+            <div class="skill">Python</div>
+            <div class="skill">Data Science</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">Deep Learning</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Pandas</div>
+            <div class="skill">NumPy</div>
+            <div class="skill">Scikit-learn</div>
+            <div class="skill">TensorFlow</div>
+            <div class="skill">PyTorch</div>
+            <div class="skill">Data Visualization</div>
+            <div class="skill">Statistical Analysis</div>
+            <div class="skill">Git</div>
+            <div class="skill">FastAPI</div>
+            <div class="skill">Docker</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="spinner" id="spinner"></div>
+        <div id="project-container">
+            <div class="project-card">
+                <h3>Langchain Models</h3>
+                <p>Enhanced NLP capabilities with state-of-the-art LangChain implementations.</p>
+            </div>
+            <div class="project-card">
+                <h3>Financial Report Summarizer</h3>
+                <p>Dash app summarizing financial reports for actionable stakeholder insights.</p>
+            </div>
+            <div class="project-card">
+                <h3>Spam and Ham Detection</h3>
+                <p>NLP model classifying emails as spam or ham with high accuracy.</p>
+            </div>
+            <div class="project-card">
+                <h3>Crime Type Prediction</h3>
+                <p>Predicted crime types and districts in Chicago using ML algorithms.</p>
+            </div>
+            <div class="project-card">
+                <h3>Diabetes Classification</h3>
+                <p>Logistic regression model aiding early diabetes diagnosis.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <h2>Contact Me</h2>
-        <form action="#" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <div class="spinner"></div>
+        <p>Email: <a href="mailto:obaudeayodejimichael@gmail.com">obaudeayodejimichael@gmail.com</a></p>
+        <p>Phone: <a href="tel:+2347061009114">+234 706 100 9114</a></p>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Typed('#typed-text', {
+                strings: ['Data Scientist', 'Python Developer', 'Machine Learning Engineer'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true
+            });
+
+            // Loading Animation for Projects
+            const spinner = document.getElementById('spinner');
+            const projectContainer = document.getElementById('project-container');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            spinner.style.display = 'block';
+
+            setTimeout(() => {
+                spinner.style.display = 'none';
+                projectCards.forEach((card, index) => {
+                    setTimeout(() => card.classList.add('show'), index * 200);
+                });
+            }, 1000);
+
+            // Animation for Skills
+            const skills = document.querySelectorAll('.skill');
+            skills.forEach((skill, index) => {
+                setTimeout(() => skill.classList.add('show'), index * 100);
+            });
+
+            // Animation for Education Cards
+            const educationCards = document.querySelectorAll('.education-card');
+            educationCards.forEach((card, index) => {
+                setTimeout(() => card.classList.add('show'), index * 200);
+            });
+        });
+    </script>
 </body>
 </html>
