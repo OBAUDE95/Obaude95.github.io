@@ -23,17 +23,150 @@
             margin-bottom: 20px;
         }
 
-        /* Project Section Styling */
-        #projects {
-            background-color: #121212;
+        /* About Section Styling */
+        #about {
+            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
+            color: #f9f9f9;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        #projects h2 {
-            color: #ffffff;
+       .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-       .project-card {
+       .about-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+       .about-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+       .about-text {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Experience Section Styling */
+        #experience {
+            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
+            color: #f9f9f9;
+            padding: 40px 20px;
+        }
+
+       .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+       .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #00bcd4;  
+            top: 0;
+            bottom: 0;
+            left: 50%;  
+            margin-left: -1px;  
+        }
+
+       .timeline-item {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            width: 45%;
+            left: 2%;
+        }
+
+       .timeline-item:nth-child(even) {
+            left: 53%;
+        }
+
+       .timeline-item h3 {
+            margin: 0 0 10px;
+            color: #00bcd4;
+        }
+
+       .timeline-item p {
+            margin: 0;
+            color: #cccccc;
+        }
+
+       .date {
+            font-size: 1rem;
+            color: #cccccc;
+        }
+
+        /* Education Section Styling */
+        #education {
+            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
+            color: #f9f9f9;
+            padding: 40px 20px;
+        }
+
+       .education-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+       .education-card {
+            margin: 20px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: calc(33% - 40px);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+       .education-card.show {
+            animation: flyIn 0.7s ease forwards;
+        }
+
+       .education-card h3 {
+            margin: 0 0 10px;
+            color: #00bcd4;
+        }
+
+       .education-card.degree {
+            font-size: 1rem;
+            color: #cccccc;
+        }
+
+       .education-card.details {
+            font-size: 1rem;
+            color: #cccccc;
+        }   
+
+        /* Projects Section Styling */
+        #projects {
+            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
+            color: #f9f9f9;
+            padding: 40px 20px;
+        }
+
+      .project-card {
             display: inline-block;
             width: calc(33% - 40px);
             margin: 20px;
@@ -45,34 +178,45 @@
             transform: translateY(50px);
         }
 
-       .project-card h3 {
+      .project-card.show {
+            animation: flyIn 0.7s ease forwards;
+        }
+
+      .project-card h3 {
             margin: 0 0 10px;
             color: #00bcd4;
         }
 
-       .project-card p {
+      .project-card p {
             margin: 0;
             color: #cccccc;
         }
 
-        /* Animation for Project Cards */
-        @keyframes flyIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        /* Contact Section Styling */
+        #contact {
+            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
+            color: #f9f9f9;
+            padding: 40px 20px;
+            text-align: center;
         }
 
-       .project-card.show {
-            animation: flyIn 0.7s ease forwards;
+      .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Skills Section Animation */
-       .skill {
+        /* Skills Section Styling */
+        #skills {
+            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
+            color: #f9f9f9;
+            padding: 40px 20px;
+        }
+
+      .skill {
             display: inline-block;
             margin: 10px;
             padding: 10px 20px;
@@ -84,24 +228,24 @@
             transform: translateY(50px);
         }
 
-       .skill.show {
+      .skill.show {
             animation: flyIn 0.7s ease forwards;
         }
 
-        /* Contact Section Styling */
-        #contact {
-            background-color: #1e1e1e;
-            color: #ffffff;
-            text-align: center;
-        }
-
-        #contact a {
-            color: #00bcd4;
-            text-decoration: none;
+        /* Animation for Cards */
+        @keyframes flyIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* Spinner */
-       .spinner {
+      .spinner {
             display: none;
             margin: 0 auto 20px;
             width: 50px;
@@ -120,29 +264,6 @@
                 transform: rotate(360deg);
             }
         }
-
-        /* About Section Styling */
-        #about {
-            background-color: #121212;
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-       .about-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-       .about-container p {
-            width: 60%;
-        }
-
-       .about-image img {
-            width: 30%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
     </style>
 </head>
 <body>
@@ -151,6 +272,8 @@
             <div class="logo">Obaude Ayodeji Michael</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -186,11 +309,13 @@
     <section id="about">
         <h2>About Me</h2>
         <div class="about-container">
-            <p>
-                As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems. I am committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
-            </p>
             <div class="about-image">
                 <img src="deji.jpg" alt="Obaude Ayodeji Michael" />
+            </div>
+            <div class="about-text">
+                <p>
+                    As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems. I am committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
+                </p>
             </div>
         </div>
     </section>
@@ -198,40 +323,30 @@
     <section id="experience">
         <h2>Work Experience</h2>
         <div class="timeline-container">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Data Scientist</h3>
-                    <div class="date">December 2024 - Present</div>
-                    <p>Gabby Health Tech</p>
-                </div>
+            <div class="timeline-item" style="left: 2%;">
+                <h3>Data Scientist</h3>
+                <div class="date">December 2024 - Present</div>
+                <p>Gabby Health Tech</p>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Learning Facilitator</h3>
-                    <div class="date">June 2024 - Present</div>
-                    <p>ALX Africa</p>
-                </div>
+            <div class="timeline-item" style="left: 53%;">
+                <h3>Learning Facilitator</h3>
+                <div class="date">June 2024 - Present</div>
+                <p>ALX Africa</p>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Data Analyst & Data Scientist</h3>
-                    <div class="date">July 2023 - Present</div>
-                    <p>Write Smart Solution</p>
-                </div>
+            <div class="timeline-item" style="left: 2%;">
+                <h3>Data Analyst & Data Scientist</h3>
+                <div class="date">July 2023 - Present</div>
+                <p>Write Smart Solution</p>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Associate Consultant Data Scientist</h3>
-                    <div class="date">July 2022 - July 2023</div>
-                    <p>Prognoz AI</p>
-                </div>
+            <div class="timeline-item" style="left: 53%;">
+                <h3>Associate Consultant Data Scientist</h3>
+                <div class="date">July 2022 - July 2023</div>
+                <p>Prognoz AI</p>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Data Scientist Intern</h3>
-                    <div class="date">November 2021 - July 2022</div>
-                    <p>OneCampus Academy</p>
-                </div>
+            <div class="timeline-item" style="left: 2%;">
+                <h3>Data Scientist Intern</h3>
+                <div class="date">November 2021 - July 2022</div>
+                <p>OneCampus Academy</p>
             </div>
         </div>
     </section>
@@ -244,13 +359,11 @@
                 <div class="degree">Master of Science in Computer Science</div>
                 <div class="details">October 2024 - Present</div>
             </div>
-            
             <div class="education-card">
                 <h3>Achievers University</h3>
                 <div class="degree">Postgraduate Diploma in Computer Science</div>
                 <div class="details">CGPA: 4.74</div>
             </div>
-            
             <div class="education-card">
                 <h3>Adekunle Ajasin University</h3>
                 <div class="degree">Bachelor of Science in Economics Education</div>
@@ -309,8 +422,10 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:obaudeayodejimichael@gmail.com">obaudeayodejimichael@gmail.com</a></p>
-        <p>Phone: <a href="tel:+2347061009114">+234 706 100 9114</a></p>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:obaudeayodejimichael@gmail.com">obaudeayodejimichael@gmail.com</a></p>
+            <p>Phone: <a href="tel:+2347061009114">+234 706 100 9114</a></p>
+        </div>
     </section>
 
     <script>
