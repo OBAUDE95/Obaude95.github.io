@@ -43,13 +43,11 @@
             height: 150px;
             border-radius: 50%;
             margin-bottom: 20px;
-            overflow: hidden;
         }
 
        .about-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
             border-radius: 50%;
         }
 
@@ -156,7 +154,7 @@
             color: #cccccc;
         }
 
-      .education-card.details {
+       .education-card.details {
             font-size: 1rem;
             color: #cccccc;
         }   
@@ -168,7 +166,7 @@
             padding: 40px 20px;
         }
 
-    .project-card {
+      .project-card {
             display: inline-block;
             width: calc(33% - 40px);
             margin: 20px;
@@ -178,24 +176,18 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             opacity: 0;
             transform: translateY(50px);
-            transition: transform 0.3s ease;
         }
 
-    .project-card.show {
+      .project-card.show {
             animation: flyIn 0.7s ease forwards;
         }
 
-    .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-        }
-
-    .project-card h3 {
+      .project-card h3 {
             margin: 0 0 10px;
             color: #00bcd4;
         }
 
-    .project-card p {
+      .project-card p {
             margin: 0;
             color: #cccccc;
         }
@@ -208,7 +200,7 @@
             text-align: center;
         }
 
-    .contact-info {
+      .contact-info {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
@@ -224,7 +216,7 @@
             padding: 40px 20px;
         }
 
-    .skill {
+      .skill {
             display: inline-block;
             margin: 10px;
             padding: 10px 20px;
@@ -236,7 +228,7 @@
             transform: translateY(50px);
         }
 
-    .skill.show {
+      .skill.show {
             animation: flyIn 0.7s ease forwards;
         }
 
@@ -253,7 +245,7 @@
         }
 
         /* Spinner */
-    .spinner {
+      .spinner {
             display: none;
             margin: 0 auto 20px;
             width: 50px;
@@ -309,7 +301,7 @@
                 <a href="resume.pdf" class="btn" download>Download Resume</a>
             </div>
             <div class="profile-image">
-                <img src="deji.jpg" alt="Obaude Ayodeji Michael" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
+                <img src="deji.jpg" alt="Obaude Ayodeji Michael">
             </div>
         </div>
     </section>
@@ -318,7 +310,7 @@
         <h2>About Me</h2>
         <div class="about-container">
             <div class="about-image">
-                <img src="deji.jpg" alt="Obaude Ayodeji Michael" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <img src="deji.jpg" alt="Obaude Ayodeji Michael" />
             </div>
             <div class="about-text">
                 <p>
@@ -438,7 +430,6 @@
         <div class="contact-info">
             <p>Email: <a href="mailto:obaudeayodejimichael@gmail.com">obaudeayodejimichael@gmail.com</a></p>
             <p>Phone: <a href="tel:+2347061009114">+234 706 100 9114</a></p>
-            <p><a href="contact.html">Visit my contact page for more information.</a></p>
         </div>
     </section>
 
