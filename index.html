@@ -6,270 +6,14 @@
     <title>Obaude Ayodeji Michael - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <style>
-        /* General Styling */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #f9f9f9;
-        }
-
-        section {
-            padding: 40px 20px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        /* About Section Styling */
-        #about {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-       .about-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-       .about-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-       .about-image img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
-
-       .about-text {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Experience Section Styling */
-        #experience {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-       .timeline-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-       .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: #00bcd4;  
-            top: 0;
-            bottom: 0;
-            left: 50%;  
-            margin-left: -1px;  
-        }
-
-       .timeline-item {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            position: relative;
-            width: 45%;
-            left: 2%;
-        }
-
-       .timeline-item:nth-child(even) {
-            left: 53%;
-        }
-
-       .timeline-item h3 {
-            margin: 0 0 10px;
-            color: #00bcd4;
-        }
-
-       .timeline-item p {
-            margin: 0;
-            color: #cccccc;
-        }
-
-       .date {
-            font-size: 1rem;
-            color: #cccccc;
-        }
-
-        /* Education Section Styling */
-        #education {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-       .education-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-       .education-card {
-            margin: 20px;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            width: calc(33% - 40px);
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-       .education-card.show {
-            animation: flyIn 0.7s ease forwards;
-        }
-
-       .education-card h3 {
-            margin: 0 0 10px;
-            color: #00bcd4;
-        }
-
-       .education-card.degree {
-            font-size: 1rem;
-            color: #cccccc;
-        }
-
-       .education-card.details {
-            font-size: 1rem;
-            color: #cccccc;
-        }   
-
-        /* Projects Section Styling */
-        #projects {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-      .project-card {
-            display: inline-block;
-            width: calc(33% - 40px);
-            margin: 20px;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-      .project-card.show {
-            animation: flyIn 0.7s ease forwards;
-        }
-
-      .project-card h3 {
-            margin: 0 0 10px;
-            color: #00bcd4;
-        }
-
-      .project-card p {
-            margin: 0;
-            color: #cccccc;
-        }
-
-        /* Contact Section Styling */
-        #contact {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-      .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Skills Section Styling */
-        #skills {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-      .skill {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #1e1e1e;
-            border-radius: 5px;
-            color: #00bcd4;
-            font-weight: bold;
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-      .skill.show {
-            animation: flyIn 0.7s ease forwards;
-        }
-
-        /* Animation for Cards */
-        @keyframes flyIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Spinner */
-      .spinner {
-            display: none;
-            margin: 0 auto 20px;
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top: 5px solid #00bcd4;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Obaude Ayodeji Michael</div>
+            <div class="logo">OAM</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -278,6 +22,11 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -395,8 +144,7 @@
 
     <section id="projects">
         <h2>Projects</h2>
-        <div class="spinner" id="spinner"></div>
-        <div id="project-container">
+        <div class="project-container">
             <div class="project-card">
                 <h3>Langchain Models</h3>
                 <p>Enhanced NLP capabilities with state-of-the-art LangChain implementations.</p>
@@ -438,18 +186,12 @@
             });
 
             // Loading Animation for Projects
-            const spinner = document.getElementById('spinner');
             const projectContainer = document.getElementById('project-container');
             const projectCards = document.querySelectorAll('.project-card');
 
-            spinner.style.display = 'block';
-
-            setTimeout(() => {
-                spinner.style.display = 'none';
-                projectCards.forEach((card, index) => {
-                    setTimeout(() => card.classList.add('show'), index * 200);
-                });
-            }, 1000);
+            projectCards.forEach((card, index) => {
+                setTimeout(() => card.classList.add('show'), index * 200);
+            });
 
             // Animation for Skills
             const skills = document.querySelectorAll('.skill');
@@ -460,7 +202,21 @@
             // Animation for Education Cards
             const educationCards = document.querySelectorAll('.education-card');
             educationCards.forEach((card, index) => {
-                setTimeout(() => card.classList.add('show'), index * 200);
+                setTimeout(() => card.classList.add('show'), index * 200); 
+            });
+
+            // Scroll Trigger
+            const scrollTrigger = ScrollTrigger.create({
+                trigger: '.hero-content',
+                start: 'top center',
+                end: 'bottom center',
+                scrub: 1,
+                markers: true
+            });
+
+            scrollTrigger.scroll((values) => {
+                const heroContent = document.querySelector('.hero-content');
+                heroContent.style.transform = `translateY(${values.progress * 100}px)`;
             });
         });
     </script>
