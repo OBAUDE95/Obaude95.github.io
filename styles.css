@@ -1,1 +1,149 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #20232a;
+    color: #ffffff;
+}
 
+/* Header */
+header {
+    background: #282c34;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #61dafb;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #61dafb;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    background: #20232a;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+}
+
+.text-content h1 {
+    font-size: 2rem;
+    color: #61dafb;
+}
+
+.text-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.animated-title {
+    animation: fade 5s infinite alternate;
+    font-weight: bold;
+}
+
+@keyframes fade {
+    0%, 50% {
+        content: "Data Scientist";
+        color: #61dafb;
+    }
+    51%, 100% {
+        content: "Data Analyst";
+        color: #ff9800;
+    }
+}
+
+.text-content p {
+    margin: 20px 0;
+}
+
+.profile-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #61dafb;
+}
+
+/* About Section */
+#about {
+    text-align: center;
+    padding: 50px 20px;
+    background: #282c34;
+}
+
+#about h2 {
+    color: #61dafb;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.btn {
+    background: #61dafb;
+    color: #20232a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Skills Section */
+#skills {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    background: #282c34;
+    padding: 15px;
+    border-radius: 8px;
+    color: #61dafb;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
