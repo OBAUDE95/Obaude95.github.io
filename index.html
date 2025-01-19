@@ -1,468 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obaude Ayodeji Michael - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <style>
-        /* General Styling */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #f9f9f9;
-        }
+    <head>
+        <!--========Meta Tags SEO======-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A passionate 'Web Developer' | 'Python Developer' from India. This portfolio showcasing projects, skills, and experiences in web development, software engineering, and more. Discover my work, professional journey, and get in touch for collaborations.">
+        <meta name="keywords" content="Portfolio, Web Developer, Python Developer, Software Engineer, Python Full Stack Developer">
+        
+        <!--=========Canonical Tag=======-->
+        <link rel="canonical" href="https://vsmidhun.site">
 
-        section {
-            padding: 40px 20px;
-        }
+        <!--========Social Media Tag=========-->
+        <meta property="og:title" content="Midhun V S">
+        <meta property="og:description" content="A passionate 'Web Developer' | 'Python Developer' from India. This portfolio showcasing projects, skills, and experiences in web development, software engineering, and more. Discover my work, professional journey, and get in touch for collaborations.">
+        <meta property="og:image" content="https://vsmidhun21.github.io/img/Preview.png">
+        <meta property="og:url" content="https://vsmidhun.site">
+        <meta property="og:type" content="website">
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+        <!--========Title===== -->
+        <title>Midhun V S</title>
 
-        /* About Section Styling */
-        #about {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-            text-align: center;
-        }
+        <!--========Site Icon===== -->
+        <link rel="shortcut icon" type="image/png" href="./img/about.png">
 
-       .about-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+        <!--========Stylesheet===== -->
+        <link rel="stylesheet" href='./files/style.css'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&amp;display=swap">
 
-       .about-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
+        <!--========BoxIcons===== -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-       .about-image img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
-
-       .about-text {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Experience Section Styling */
-        #experience {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-       .timeline-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-       .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: #00bcd4;  
-            top: 0;
-            bottom: 0;
-            left: 50%;  
-            margin-left: -1px;  
-        }
-
-       .timeline-item {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            position: relative;
-            width: 45%;
-            left: 2%;
-        }
-
-       .timeline-item:nth-child(even) {
-            left: 53%;
-        }
-
-       .timeline-item h3 {
-            margin: 0 0 10px;
-            color: #00bcd4;
-        }
-
-       .timeline-item p {
-            margin: 0;
-            color: #cccccc;
-        }
-
-       .date {
-            font-size: 1rem;
-            color: #cccccc;
-        }
-
-        /* Education Section Styling */
-        #education {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-       .education-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-       .education-card {
-            margin: 20px;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            width: calc(33% - 40px);
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-       .education-card.show {
-            animation: flyIn 0.7s ease forwards;
-        }
-
-       .education-card h3 {
-            margin: 0 0 10px;
-            color: #00bcd4;
-        }
-
-       .education-card.degree {
-            font-size: 1rem;
-            color: #cccccc;
-        }
-
-       .education-card.details {
-            font-size: 1rem;
-            color: #cccccc;
-        }   
-
-        /* Projects Section Styling */
-        #projects {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-      .project-card {
-            display: inline-block;
-            width: calc(33% - 40px);
-            margin: 20px;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-      .project-card.show {
-            animation: flyIn 0.7s ease forwards;
-        }
-
-      .project-card h3 {
-            margin: 0 0 10px;
-            color: #00bcd4;
-        }
-
-      .project-card p {
-            margin: 0;
-            color: #cccccc;
-        }
-
-        /* Contact Section Styling */
-        #contact {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-      .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Skills Section Styling */
-        #skills {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-      .skill {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #1e1e1e;
-            border-radius: 5px;
-            color: #00bcd4;
-            font-weight: bold;
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-      .skill.show {
-            animation: flyIn 0.7s ease forwards;
-        }
-
-        /* Animation for Cards */
-        @keyframes flyIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
+        <!--========TailwindCSS===== -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!--========TypedJS===== -->
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        <!--========JSON Script======-->
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Person",
+                "name": "Midhun V S",
+                "url": "https://vsmidhun.site",
+                "image": "https://vsmidhun21.github.io/img/newabt.png",
+                "sameAs": [
+                    "https://www.linkedin.com/in/midhun-v-s",
+                    "https://instagram.com/midhun_021"
+                ],
+                "jobTitle": "Web Developer",
+                "description": "Passionate web developer with experience in creating responsive and interactive websites.",
+                "alumniOf": {
+                    "@type": "EducationalOrganization",
+                    "name": "Ramco Institute of Technology"
+                }
             }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+            </script>
+    </head>
+    <body>
+        <!-- =========================================NavBar========================================= -->
+        <header class="header" id="header">
+            <a class="logo" href="https://vsmidhun.site">Midhun V S</a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon"><i class='bx bx-menu'></i></label>
+            <nav class="navbar" id="myLinks">
+                <a href="#Home" style="--i:1" class="active" >Home</a>
+                <a href="#About" style="--i:2">About</a>
+                <a href="#Skills" style="--i:3">Skills</a>
+                <a href="#Projects" style="--i:4">Projects</a>
+                <a href="#Contact" style="--i:5">Contact</a>
+            </nav>
+        </header>
 
-        /* Spinner */
-      .spinner {
-            display: none;
-            margin: 0 auto 20px;
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top: 5px solid #00bcd4;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
+        <!-- =========================================Home========================================= -->
+        <section class="home" id="Home">
+            <div class="home-content">
+                
+                <h3>Hello, It's Me</h3>
+                <h1>MIDHUN V S</h1>
+                <h4 style="--i:6">I'm a Engineering graduate who is<br>
+                    passionate in <span class="text"></span></h4>
+                
+                <div class="img">
+                    <img src="./img/Home.png" class="responsive" alt="Midhun V S">
+                </div>
 
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Obaude Ayodeji Michael</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+                <div class="home-sci">
+                    <a href="https://www.linkedin.com/in/midhun-v-s"style="--i:7" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/vsmidhun21"style="--i:8" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://instagram.com/midhun_021"style="--i:9" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://www.youtube.com/@Unlucky_Coder21"style="--i:10" target="_blank"><i class='bx bxl-youtube'></i></a>
+                </div>
+                <a href="https://drive.google.com/file/d/1B_8J3f9bUFoDll0PuHhioOBsyanGbMwE/view?usp=sharing" style="--i:11" class="btn-box" target="_blank">Download Resume</a>
+            </div>
+        </section>
 
-    <section id="hero">
-        <div class="hero-content">
-            <div class="text-content">
-                <h1>HELLO, I'M</h1>
-                <h2>Obaude Ayodeji Michael</h2>
-                <p>I'm a <span id="typed-text"></span></p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/ayodeji-obaude-79b5051b2/" target="_blank">
-                        <img src="linkedin.png" alt="LinkedIn">
-                    </a>
-                    <a href="https://github.com/OBAUDE95" target="_blank">
-                        <img src="github.png" alt="GitHub">
-                    </a>
-                    <a href="https://x.com/obaudeayodeji" target="_blank">
-                        <img src="twitter.png" alt="Twitter">
+        <!-- =========================================About========================================= -->
+        <section id="About">
+            <div class="about reveal">
+                <div class="custom-shape-divider-top-1720508545">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+
+                <div class="about-img">
+                    <img src="./img/about.png" class="abt-res" alt="Midhun V S">
+                </div>
+                <div class="about-text reveal">
+                    <h2>About <span>Me</span></h2>
+                    <p>I'm a Smart working engineering graduate specialized in Electronics and Communication Engineering.
+                        Along with my degree, I completed Python, SQL, Java, Cybersecurity courses and various technologies.
+                        I learnt has helped me develop a project called "Drowsiness Detection & Alerting System".
+                        It was during this project that I discovered that I am a team player.
+                        I am currently seeking roles where I can utilize my experience and skill.<br>
+                        <br>
+                        <a href="./files/timeline.html" style="--i:11" class="abtbtn-box">Accademics & Experience</a>
+                    </p>
+                </div>
+
+                <div class="custom-shape-divider-bottom-1720509106">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================Skills========================================= -->
+        <section id="Skills">
+            <h1 class="subtitle reveal">My <span>Skills</span></h1>
+            <div class="skills-container">
+                <!-- Skill 1 -->
+                <div class="skill-box reveal">
+                    <img src="./img/logos/python.png" alt="Python">
+                    <p>Python</p>
+                </div>
+
+                <!-- skill 2 -->
+                <div class="skill-box reveal">
+                    <img src="./img/logos/cpro.png" alt="C Language">
+                    <p>C Language</p>
+                </div>
+
+                <!-- skill 3 -->
+                <div class="skill-box reveal">
+                    <img src="./img/logos/html-5.png" alt="HTML">
+                    <p>HTML</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/css-3.png" alt="CSS">
+                    <p>CSS</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/js.png" alt="JS">
+                    <p>JavaScript</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/react.png" alt="ReactJS">
+                    <p>ReactJS</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/nodejs.png" alt="NodeJS">
+                    <p>NodeJS</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/java.png" alt="Java">
+                    <p>Java</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/django.png" alt="Django">
+                    <p>Django</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/mysql.png" alt="MySQL">
+                    <p>MySQL</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/mongodb.png" alt="MongoDB">
+                    <p>MongoDB</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/linux.png" alt="Linux">
+                    <p>Linux</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/wordpress.png" alt="Wordpress">
+                    <p>Wordpress</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/figma.png" alt="Figma">
+                    <p>Figma</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/git.png" alt="Git">
+                    <p>Git</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/github.png" alt="GitHub">
+                    <p>GitHub</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/vscode.png" alt="VSCode">
+                    <p>VS Code</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/mspowerpoint.png" alt="Powerpoint">
+                    <p>Powerpoint</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/fastapi.png" alt="FastAPI">
+                    <p>FastAPI</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/postman.png" alt="Postman">
+                    <p>Postman</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/Canva.png" alt="Canva">
+                    <p>Canva</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/DaVinciResolve.png" alt="DaVinci Resolve">
+                    <p>DaVinci Resolve</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/audacity.png" alt="Audacity">
+                    <p>Audacity</p>
+                </div>
+
+                <div class="skill-box reveal">
+                    <img src="./img/logos/blender.png" alt="Blender">
+                    <p>Blender</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!--========================Projects============================-->
+        <section id="Projects" class="prj reveal">
+            <div class="featured-projects-box reveal">
+                <h2>My <span>Projects</span></h2>
+                <div class="separator">
+                </div>
+
+                <!--==================Project #1======================-->
+                <div class="project project1 reveal">
+                    <div class="project-details-box">
+                        <div class="project-main-info">
+                            <span>Project #1</span>
+                            <h3>Drowsiness Detection</h3>
+                            <p>
+                                The face of the driver is captured and right && left eyes are detected.
+                                If eye is closed the source value will be incremented.
+                                When the value reaches 4 or more the alarm sound will be played.
+                                Those score value will be send to the cloud simultaneously.
+                            </p>
+                            <div class="project-icons">
+                                <a href="https://github.com/vsmidhun21/DrowsinessDetectionAndAlertingSystem", target="_blank"><i class='bx bxl-github'></i></a>
+                                <a href="https://youtu.be/xlH6WHzobcc", target="_blank"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="project-tools">
+                            <p>Python, OpenCV, IBM Cloud</p>
+                        </div>
+                    </div>
+                    <div class="project-image-box">
+                        <a href="https://youtu.be/xlH6WHzobcc", target="_blank", class="project-img-link">
+                            <img src="./img/DD.png" alt="Project Preview Image" />
+                        </a>
+                    </div>
+                </div>
+
+                <!--===============Project #2=============-->
+                <div class="project project2 reveal">
+                    <div class="project-details-box">
+                        <div class="project-main-info">
+                            <span>Project #2</span>
+                            <h3>Desktop Application</h3>
+                            <p>
+                                A windows application to manage the work of the staff’s in the company.
+                                The application will get the details of the work progress of the employee and store in the database.
+                                Also the manager can generate report from those data easily using the application.
+                            </p>
+                            <div class="project-icons">
+                                <a href="https://github.com/vsmidhun21/ApplicationToMonitorStaffsWork", target="_blank"><i class='bx bxl-github'></i></a>
+                                <a href="https://youtu.be/szw4Al6vDFs", target="_blank"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="project-tools">
+                            <p>Python, Tkinter, MS SQL Server</p>
+                        </div>
+                    </div>
+                    <div class="project-image-box">
+                        <a href="https://youtu.be/szw4Al6vDFs", target="_blank", class="project-img-link">
+                            <img src="./img/DA.jpg" alt="Project Preview Image" />
+                        </a>
+                    </div>
+                </div>
+
+                <!--===========================Project #3==================-->
+                <div class="project project1 reveal">
+                    <div class="project-details-box">
+                        <div class="project-main-info">
+                            <span>Project #3</span>
+                            <h3>Leaf Disease Detection</h3>
+                            <p>
+                                The program will get leaf image as input.
+                                By analyzing the color, holes etc. the disease of the leaf is identified.
+                                After analyzing if there is any disease is spotted then the name of the disease is displayed.
+                                If no disease found then "Healthy Leaf" will be displayed as output.
+                            </p>
+                            <div class="project-icons">
+                                <a href="https://github.com/vsmidhun21/Leaf-Disease-Detection", target="_blank"><i class='bx bxl-github'></i></a>
+                                <a href="https://youtu.be/_VlrYOOJYhQ", target="_blank"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="project-tools">
+                            <p>Python, OpenCV, Tkinter</p>
+                        </div>
+                    </div>
+                    <div class="project-image-box">
+                        <a href="https://youtu.be/_VlrYOOJYhQ", target="_blank", class="project-img-link">
+                            <img src="./img/LDD.jpg" alt="Project Preview Image" />
+                        </a>
+                    </div>
+                </div>
+
+                <!--===============Project #4=============-->
+                <div class="project project2 reveal">
+                    <div class="project-details-box">
+                        <div class="project-main-info">
+                            <span>Project #4</span>
+                            <h3>Cement Bag Automation</h3>
+                            <p>
+                                The program gets input from the live camera and convert to separate frames.
+                                The frames will detect the cement bag in the conveyor.
+                                When the cement bags cross a point then the count of the cement bag is incremented and the data will be stored in the database with exact datetime.
+                            </p>
+                            <div class="project-icons">
+                                <a href="https://github.com/vsmidhun21/CementBag", target="_blank"><i class='bx bxl-github'></i></a>
+                                <a href="https://youtu.be/Tu7Bp2tmdas", target="_blank"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="project-tools">
+                            <p>Python, OpenCV, YOLO, SQL</p>
+                        </div>
+                    </div>
+                    <div class="project-image-box">
+                        <a href="https://youtu.be/Tu7Bp2tmdas", target="_blank", class="project-img-link">
+                            <img src="./img/CBD.jpg" alt="Project Preview Image" />
+                        </a>
+                    </div>
+                </div>
+
+                <!--===============Project #5=============-->
+                <div class="project project1 reveal">
+                    <div class="project-details-box">
+                        <div class="project-main-info">
+                            <span>Project #5</span>
+                            <h3>Retail E-commerce</h3>
+                            <p>
+                                I have developed a retail e-commerce platform using Python full stack technologies.
+                                The project aims to create a robust and user-friendly online shopping experience,
+                                incorporating features such as product catalog management, user authentication and shopping cart functionality.
+                            </p>
+                            <div class="project-icons">
+                                <a href="https://github.com/vsmidhun21/Ecommerce-Project", target="_blank"><i class='bx bxl-github'></i></a>
+                                <a href="https://vsmidhun.pythonanywhere.com/", target="_blank"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="project-tools">
+                            <p>Python, Django, HTML, CSS</p>
+                        </div>
+                    </div>
+                    <div class="project-image-box">
+                        <a href="https://vsmidhun.pythonanywhere.com", target="_blank", class="project-img-link">
+                            <img src="./img/REC.jpg" alt="Project Preview Image" />
+                        </a>
+                    </div>
+                </div>
+
+                <!--===============Project #6=============-->
+                <div class="project project2 reveal">
+                    <div class="project-details-box">
+                        <div class="project-main-info">
+                            <span>Project #6</span>
+                            <h3>Floor Cleaning Robot</h3>
+                            <p>
+                                Did a Floor Cleaning Robot that can be controlled using an Android application using Voice inputs.
+                                The Robot can be controlled manually by providing predefined commands.
+                                Also the robot can run autonomously by giving the command as "Auto".
+                                Obstacles are avoided using UV Sensor. 
+                            </p>
+                            <div class="project-icons">
+                                <a href="https://github.com/vsmidhun21/Floor-Cleaning-Robot", target="_blank"><i class='bx bxl-github'></i></a>
+                                <a href="https://youtu.be/IET9qNXmBq0", target="_blank"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <div class="project-tools">
+                            <p>Embedded C, ThingSpeak, MIT App Inventor</p>
+                        </div>
+                    </div>
+                    <div class="project-image-box">
+                        <a href="https://youtu.be/IET9qNXmBq0", target="_blank", class="project-img-link">
+                            <img src="./img/FCR.jpg" alt="Project Preview Image" />
+                        </a>
+                    </div>
+                </div>
+
+            <!--===============Project #7=============-->
+            <div class="project project1 reveal">
+                <div class="project-details-box">
+                    <div class="project-main-info">
+                        <span>Project #7</span>
+                        <h3>LEGO Identification</h3>
+                        <p>
+                            Utilizing YOLOv8, this project employs machine learning to accurately detect and classify LEGO bricks by color and size from images and videos.
+                            It features a Streamlit web application for real-time brick detection via camera feed or file upload, enhancing accessibility and usability.
+                        </p>
+                        <div class="project-icons">
+                            <a href="https://github.com/vsmidhun21/Lego-Identification", target="_blank"><i class='bx bxl-github'></i></a>
+                            <a href="https://lego-app.streamlit.app/", target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-tools">
+                        <p>Python, YOLO, Streamlit</p>
+                    </div>
+                </div>
+                <div class="project-image-box">
+                    <a href="https://lego-detection.streamlit.app/", target="_blank", class="project-img-link">
+                        <img src="./img/LEGO.jpg" alt="Project Preview Image" />
                     </a>
                 </div>
-                <a href="resume.pdf" class="btn" download>Download Resume</a>
             </div>
-            <div class="profile-image">
-                <img src="deji.jpg" alt="Obaude Ayodeji Michael">
-            </div>
-        </div>
-    </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <div class="about-image">
-                <img src="deji.jpg" alt="Obaude Ayodeji Michael" />
-            </div>
-            <div class="about-text">
-                <p>
-                    As a passionate <strong>Data Scientist</strong> and <strong>Python Developer</strong>, I bring technical expertise and analytical thinking to solve real-world problems. I am committed to leveraging machine learning and data science for impactful solutions, staying ahead of industry trends to deliver value.
-                </p>
-            </div>
-        </div>
-    </section>
 
-    <section id="experience">
-        <h2>Work Experience</h2>
-        <div class="timeline-container">
-            <div class="timeline-item" style="left: 2%;">
-                <h3>Data Scientist</h3>
-                <div class="date">December 2024 - Present</div>
-                <p>Gabby Health Tech</p>
             </div>
-            <div class="timeline-item" style="left: 53%;">
-                <h3>Learning Facilitator</h3>
-                <div class="date">June 2024 - Present</div>
-                <p>ALX Africa</p>
-            </div>
-            <div class="timeline-item" style="left: 2%;">
-                <h3>Data Analyst & Data Scientist</h3>
-                <div class="date">July 2023 - Present</div>
-                <p>Write Smart Solution</p>
-            </div>
-            <div class="timeline-item" style="left: 53%;">
-                <h3>Associate Consultant Data Scientist</h3>
-                <div class="date">July 2022 - July 2023</div>
-                <p>Prognoz AI</p>
-            </div>
-            <div class="timeline-item" style="left: 2%;">
-                <h3>Data Scientist Intern</h3>
-                <div class="date">November 2021 - July 2022</div>
-                <p>OneCampus Academy</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-container">
-            <div class="education-card">
-                <h3>Achievers University</h3>
-                <div class="degree">Master of Science in Computer Science</div>
-                <div class="details">October 2024 - Present</div>
+        <!--====================== Contact =============================== -->
+        <section class="contacts" id="Contact">
+            <div class="contact-text reveal">
+                <h2>Contact <span>Me</span></h2>
+                <center><h4>Get in Touch</h4>
+                <div class="contact-list">
+                    <li><i class="bx bxs-phone-call" ></i>+918903909217</li>
+                    <li><i class='bx bxl-gmail'></i>midhun890390@gmail.com</li>
+                    <li><i class='bx bxs-location-plus' ></i>Virudhunagar, TamilNadu, India</li>
+                    
+                </div>
+                <div class="contact-icons">
+                    <a href="https://www.linkedin.com/in/midhun-v-s" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/vsmidhun21" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.youtube.com/@Unlucky_Coder21"><i class='bx bxl-youtube'></i></a>
+                    <a href="https://instagram.com/midhun_021" target="_blank"><i class="bx bxl-instagram"></i></a>
+                </div>
+                </center>
+                <div class="last-text">
+                    <p>Developed by Midhun <i class='bx bx-copyright' style="color: white;"></i> 2024</p>
+                </div>
             </div>
-            <div class="education-card">
-                <h3>Achievers University</h3>
-                <div class="degree">Postgraduate Diploma in Computer Science</div>
-                <div class="details">CGPA: 4.74</div>
-            </div>
-            <div class="education-card">
-                <h3>Adekunle Ajasin University</h3>
-                <div class="degree">Bachelor of Science in Economics Education</div>
-                <div class="details">Second Class Upper</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills">
-        <h2>My Skills</h2>
-        <div id="skills-container">
-            <div class="skill">Python</div>
-            <div class="skill">Data Science</div>
-            <div class="skill">Machine Learning</div>
-            <div class="skill">Deep Learning</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Pandas</div>
-            <div class="skill">NumPy</div>
-            <div class="skill">Scikit-learn</div>
-            <div class="skill">TensorFlow</div>
-            <div class="skill">PyTorch</div>
-            <div class="skill">Data Visualization</div>
-            <div class="skill">Statistical Analysis</div>
-            <div class="skill">Git</div>
-            <div class="skill">FastAPI</div>
-            <div class="skill">Docker</div>
-        </div>
-    </section>
+        <!--====================== Go Top Icon =============================== -->
+        <a href="#Home" class="top"><i class='bx bx-up-arrow-alt' ></i> </a>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="spinner" id="spinner"></div>
-        <div id="project-container">
-            <div class="project-card">
-                <h3>Langchain Models</h3>
-                <p>Enhanced NLP capabilities with state-of-the-art LangChain implementations.</p>
-            </div>
-            <div class="project-card">
-                <h3>Financial Report Summarizer</h3>
-                <p>Dash app summarizing financial reports for actionable stakeholder insights.</p>
-            </div>
-            <div class="project-card">
-                <h3>Spam and Ham Detection</h3>
-                <p>NLP model classifying emails as spam or ham with high accuracy.</p>
-            </div>
-            <div class="project-card">
-                <h3>Crime Type Prediction</h3>
-                <p>Predicted crime types and districts in Chicago using ML algorithms.</p>
-            </div>
-            <div class="project-card">
-                <h3>Diabetes Classification</h3>
-                <p>Logistic regression model aiding early diabetes diagnosis.</p>
-            </div>
-        </div>
-    </section>
+        <!--========Scripts===== -->
+        <script src="./files/script.js"></script>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:obaudeayodejimichael@gmail.com">obaudeayodejimichael@gmail.com</a></p>
-            <p>Phone: <a href="tel:+2347061009114">+234 706 100 9114</a></p>
-        </div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            new Typed('#typed-text', {
-                strings: ['Data Scientist', 'Python Developer', 'Machine Learning Engineer'],
-                typeSpeed: 50,
-                backSpeed: 30,
-                loop: true
-            });
-
-            // Loading Animation for Projects
-            const spinner = document.getElementById('spinner');
-            const projectContainer = document.getElementById('project-container');
-            const projectCards = document.querySelectorAll('.project-card');
-
-            spinner.style.display = 'block';
-
-            setTimeout(() => {
-                spinner.style.display = 'none';
-                projectCards.forEach((card, index) => {
-                    setTimeout(() => card.classList.add('show'), index * 200);
-                });
-            }, 1000);
-
-            // Animation for Skills
-            const skills = document.querySelectorAll('.skill');
-            skills.forEach((skill, index) => {
-                setTimeout(() => skill.classList.add('show'), index * 100);
-            });
-
-            // Animation for Education Cards
-            const educationCards = document.querySelectorAll('.education-card');
-            educationCards.forEach((card, index) => {
-                setTimeout(() => card.classList.add('show'), index * 200);
-            });
-        });
-    </script>
-</body>
+    </body>  
 </html>
