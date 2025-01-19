@@ -194,21 +194,40 @@
         }
 
         /* Contact Section Styling */
-        #contact {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-            text-align: center;
-        }
+#contact {
+    background-image: linear-gradient(to bottom, #121212, #1e1e1e);
+    color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
 
-      .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #cccccc;
+}
+
+.contact-info a {
+    font-size: 18px;
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #f9f9f9;
+}
 
         /* Skills Section Styling */
         #skills {
@@ -447,12 +466,12 @@
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:obaudeayodejimichael@gmail.com">obaudeayodejimichael@gmail.com</a></p>
-            <p>Phone: <a href="tel:+2347061009114">+234 706 100 9114</a></p>
-        </div>
-    </section>
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+        <p>Email: <a href="mailto:obaudeayodejimichael@gmail.com">obaudeayodejimichael@gmail.com</a></p>
+        <p>Phone: <a href="tel:+2347061009114">+234 706 100 9114</a></p>
+    </div>
+</section>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
