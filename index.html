@@ -1,528 +1,608 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Obaude Ayodeji Michael - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obaude Ayodeji Michael | GenAI Developer & Data Scientist</title>
+    
+    <!-- Tailwind CSS (For robust styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Typed.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration for Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0f172a', // Slate 900
+                            800: '#1e293b', // Slate 800
+                            700: '#334155', // Slate 700
+                        },
+                        brand: {
+                            DEFAULT: '#06b6d4', // Cyan 500
+                            hover: '#0891b2',   // Cyan 600
+                            accent: '#8b5cf6',  // Violet 500 (For AI vibe)
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* General Styling */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #f9f9f9;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+        
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        section {
-            padding: 40px 20px;
+        .gradient-text {
+            background: linear-gradient(to right, #06b6d4, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        /* About Section Styling */
-        #about {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-       .about-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-       .about-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-       .about-image img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
-
-       .about-text {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Experience Section Styling */
-        #experience {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-       .timeline-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-       .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: #00bcd4;  
-            top: 0;
-            bottom: 0;
-            left: 50%;  
-            margin-left: -1px;  
-        }
-
-       .timeline-item {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            position: relative;
-            width: 45%;
-            left: 2%;
-        }
-
-       .timeline-item:nth-child(even) {
-            left: 53%;
-        }
-
-       .timeline-item h3 {
-            margin: 0 0 10px;
-            color: #00bcd4;
-        }
-
-       .timeline-item p {
-            margin: 0;
-            color: #cccccc;
-        }
-
-       .date {
-            font-size: 1rem;
-            color: #cccccc;
-        }
-
-        /* Education Section Styling */
-        #education {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-       .education-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-       .education-card {
-            margin: 20px;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            width: calc(33% - 40px);
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-       .education-card.show {
-            animation: flyIn 0.7s ease forwards;
-        }
-
-       .education-card h3 {
-            margin: 0 0 10px;
-            color: #00bcd4;
-        }
-
-       .education-card.degree {
-            font-size: 1rem;
-            color: #cccccc;
-        }
-
-       .education-card.details {
-            font-size: 1rem;
-            color: #cccccc;
-        }   
-
-        /* Projects Section Styling */
-        #projects {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-.view-project-btn {
-    background-color: #00bcd4;
-    color: #f9f9f9;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.view-project-btn a {
-    color: #f9f9f9;
-    text-decoration: none;
-}
-
-.view-project-btn:hover {
-    background-color: #0097a7;
-}
-      .project-card {
-  display: inline-block;
-  width: calc(30% - 20px);
-  margin: 10px;
-  padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transform: translateY(50px);
-  vertical-align: top;
-}
-
-      .project-card.show {
-            animation: flyIn 0.7s ease forwards;
-        }
-
-      .project-card h3 {
-            margin: 0 0 10px;
-            color: #00bcd4;
-        }
-
-      .project-card p {
-            margin: 0;
-            color: #cccccc;
-        }
-
-        /* Contact Section Styling */
-#contact {
-    background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-    color: #f9f9f9;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.contact-info {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-info p {
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: #cccccc;
-}
-
-.contact-info a {
-    font-size: 18px;
-    color: #00bcd4;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    color: #f9f9f9;
-}
-
-        /* Skills Section Styling */
-        #skills {
-            background-image: linear-gradient(to bottom, #121212, #1e1e1e);
-            color: #f9f9f9;
-            padding: 40px 20px;
-        }
-
-      .skill {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #1e1e1e;
-            border-radius: 5px;
-            color: #00bcd4;
-            font-weight: bold;
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-      .skill.show {
-            animation: flyIn 0.7s ease forwards;
-        }
-
-        /* Animation for Cards */
-        @keyframes flyIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Spinner */
-      .spinner {
-            display: none;
-            margin: 0 auto 20px;
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top: 5px solid #00bcd4;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+        
+        /* Service Card Hover Effect */
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.3);
         }
     </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Obaude Ayodeji Michael</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-dark-900 text-gray-300 antialiased selection:bg-brand selection:text-white">
 
-    <section id="hero">
-        <div class="hero-content">
-            <div class="text-content">
-                <h1>HELLO, I'M</h1>
-                <h2>Obaude Ayodeji Michael</h2>
-                <p>I'm a <span id="typed-text"></span></p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/ayodeji-obaude-79b5051b2/" target="_blank">
-                        <img src="linkedin.png" alt="LinkedIn">
-                    </a>
-                    <a href="https://github.com/OBAUDE95" target="_blank">
-                        <img src="github.png" alt="GitHub">
-                    </a>
-                    <a href="https://x.com/obaudeayodeji" target="_blank">
-                        <img src="twitter.png" alt="Twitter">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-bold text-xl text-white tracking-wider">
+                        OBAUDE<span class="text-brand">.AI</span>
                     </a>
                 </div>
-                <a href="resume.pdf" class="btn" download>Download Resume</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#services" class="hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                        <a href="#experience" class="hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors">Experience</a>
+                        <a href="#projects" class="hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#skills" class="hover:text-brand px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#contact" class="bg-brand hover:bg-brand-hover text-white px-4 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-brand/20">Contact Me</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
-            <div class="profile-image">
-                <img src="deji.jpg" alt="Obaude Ayodeji Michael">
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-t border-gray-700 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block hover:bg-dark-700 hover:text-brand px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#services" class="block hover:bg-dark-700 hover:text-brand px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#experience" class="block hover:bg-dark-700 hover:text-brand px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#projects" class="block hover:bg-dark-700 hover:text-brand px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#contact" class="block text-brand font-bold px-3 py-2">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-brand/20 rounded-full blur-3xl filter opacity-30 animate-pulse-slow"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-accent/20 rounded-full blur-3xl filter opacity-30 animate-pulse-slow" style="animation-delay: 1s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+                <div class="flex-1 text-center lg:text-left opacity-0 animate-fade-in-up">
+                    <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-brand uppercase bg-brand/10 rounded-full">
+                        Machine Learning Engineer & GenAI Developer
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+                        Obaude Ayodeji Michael
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-400 mb-6 h-12">
+                        I build <span id="typed-text" class="text-brand font-mono"></span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Transforming complex data into actionable intelligence. I specialize in building autonomous AI agents, predictive models, and high-performance digital systems.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#projects" class="bg-brand hover:bg-brand-hover text-white px-8 py-3 rounded-lg font-medium transition-all transform hover:-translate-y-1 shadow-lg shadow-brand/25 text-center">
+                            View My Projects
+                        </a>
+                        <a href="#contact" class="border border-brand text-brand hover:bg-brand hover:text-white px-8 py-3 rounded-lg font-medium transition-all text-center">
+                            Contact Me
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-center lg:justify-start gap-6">
+                        <a href="https://www.linkedin.com/in/ayodeji-obaude-79b5051b2/" target="_blank" class="text-gray-400 hover:text-brand text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/OBAUDE95" target="_blank" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/obaudeayodeji" target="_blank" class="text-gray-400 hover:text-brand-hover text-2xl transition-colors"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex justify-center lg:justify-end opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 border-2 border-brand rounded-full transform rotate-6"></div>
+                        <div class="absolute inset-0 border-2 border-brand-accent rounded-full transform -rotate-6 opacity-60"></div>
+                        <!-- REPLACE THIS SRC WITH 'deji.jpg' -->
+                        <img src="https://placehold.co/400x400/1e293b/06b6d4?text=OAM" alt="Obaude Ayodeji" class="w-full h-full object-cover rounded-full border-4 border-dark-900 shadow-2xl relative z-10">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <div class="about-image">
-                <img src="deji.jpg" alt="Obaude Ayodeji Michael" />
-            </div>
-            <div class="about-text">
-                <p> I'm a highly motivated and detail-oriented <strong>Data Scientist</strong> with a strong background in <strong>machine learning</strong>, <strong>data visualization</strong>, and <strong>statistical analysis</strong>. With a passion for delivering high-quality solutions that drive business value and improve decision-making, I'm excited to bring my skills and experience to a new challenge and continue learning and developing my expertise in emerging technologies and methodologies. 
-                </p> 
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2>Work Experience</h2>
-        <div class="timeline-container">
-            <div class="timeline-item" style="left: 2%;">
-                <h3>Data Scientist</h3>
-                <div class="date">December 2024 - Present</div>
-                <p>Gabby Health Tech</p>
-            </div>
-            <div class="timeline-item" style="left: 53%;">
-                <h3>Learning Facilitator</h3>
-                <div class="date">June 2024 - Present</div>
-                <p>ALX Africa</p>
-            </div>
-            <div class="timeline-item" style="left: 2%;">
-                <h3>Data Analyst & Data Scientist</h3>
-                <div class="date">July 2023 - Present</div>
-                <p>Write Smart Solution</p>
-            </div>
-            <div class="timeline-item" style="left: 53%;">
-                <h3>Associate Consultant Data Scientist</h3>
-                <div class="date">July 2022 - July 2023</div>
-                <p>Prognoz AI</p>
-            </div>
-            <div class="timeline-item" style="left: 2%;">
-                <h3>Data Scientist Intern</h3>
-                <div class="date">November 2021 - July 2022</div>
-                <p>OneCampus Academy</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dark-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">About <span class="gradient-text">Me</span></h2>
+            <div class="bg-dark-900 p-8 rounded-2xl shadow-xl border border-dark-700">
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    I am a results-driven <strong class="text-brand">Machine Learning Engineer</strong> and <strong class="text-brand">GenAI Developer</strong> with a passion for pushing the boundaries of what's possible with AI. My expertise spans building intelligent chatbots that drive sales, developing predictive algorithms for healthcare, and creating educational tools that adapt to student needs.
+                    <br><br>
+                    I combine deep technical knowledge in <strong class="text-white">TensorFlow, PyTorch, and LLMs</strong> with a keen eye for product design, ensuring that every solution I build is not only powerful but also user-centric.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-container">
-            <div class="education-card">
-                <h3>Achievers University</h3>
-                <div class="degree">Master of Science in Computer Science</div>
-                <div class="details">October 2024 - Present</div>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 bg-dark-900 relative">
+        <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Professional <span class="gradient-text">Services</span></h2>
+                <p class="text-gray-400">Expert solutions tailored for impact.</p>
             </div>
-            <div class="education-card">
-                <h3>Achievers University</h3>
-                <div class="degree">Postgraduate Diploma in Computer Science</div>
-                <div class="details">CGPA: 4.74</div>
-            </div>
-            <div class="education-card">
-                <h3>Adekunle Ajasin University</h3>
-                <div class="degree">Bachelor of Science in Economics Education</div>
-                <div class="details">Second Class Upper</div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: GenAI Solutions -->
+                <div class="service-card bg-dark-800 p-8 rounded-2xl border border-dark-700 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand transition-colors">
+                        <i class="fas fa-robot text-2xl text-brand group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Generative AI Solutions</h3>
+                    <p class="text-gray-400 mb-6">
+                        Developing autonomous agents and chatbots that drive engagement and close sales. Custom LLM integration for business automation.
+                    </p>
+                </div>
+
+                <!-- Service 2: Web Dev -->
+                <div class="service-card bg-dark-800 p-8 rounded-2xl border border-dark-700 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500 transition-colors">
+                        <i class="fas fa-laptop-code text-2xl text-purple-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Web Development & Branding</h3>
+                    <p class="text-gray-400 mb-6">
+                        Crafting high-performance, professional websites and digital portfolios. I build platforms that position professionals as leaders in their field.
+                    </p>
+                </div>
+
+                <!-- Service 3: Mentorship -->
+                <div class="service-card bg-dark-800 p-8 rounded-2xl border border-dark-700 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors">
+                        <i class="fas fa-chalkboard-teacher text-2xl text-green-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Technical Training</h3>
+                    <p class="text-gray-400 mb-6">
+                        Expert-led training in Python, Data Science, and Machine Learning. Helping students and teams master the tools of the future.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>My Skills</h2>
-        <div id="skills-container">
-            <div class="skill">Python</div>
-            <div class="skill">Data Science</div>
-            <div class="skill">Machine Learning</div>
-            <div class="skill">Deep Learning</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Pandas</div>
-            <div class="skill">NumPy</div>
-            <div class="skill">Scikit-learn</div>
-            <div class="skill">TensorFlow</div>
-            <div class="skill">PyTorch</div>
-            <div class="skill">Data Visualization</div>
-            <div class="skill">Statistical Analysis</div>
-            <div class="skill">Git</div>
-            <div class="skill">FastAPI</div>
-            <div class="skill">Docker</div>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-dark-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Work <span class="gradient-text">Experience</span></h2>
+                <div class="h-1 w-20 bg-brand mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative border-l-2 border-dark-700 ml-3 md:ml-6 space-y-12">
+                <!-- Job 1 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-brand rounded-full border-4 border-dark-800 group-hover:bg-white transition-colors"></div>
+                    <div class="bg-dark-900 p-6 rounded-xl shadow-lg border border-dark-700 hover:border-brand/50 transition-all transform hover:-translate-y-1">
+                        <span class="inline-block px-3 py-1 bg-brand/10 text-brand text-xs font-mono rounded-full mb-2">Dec 2024 - Present</span>
+                        <h3 class="text-xl font-bold text-white">Machine Learning Engineer & GenAI Developer</h3>
+                        <p class="text-brand font-medium mb-2">Gabby Health Tech</p>
+                        <p class="text-gray-400 text-sm">Leading the development of AI-driven health diagnostics and intelligent patient interaction systems.</p>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-gray-600 rounded-full border-4 border-dark-800 group-hover:bg-brand transition-colors"></div>
+                    <div class="bg-dark-900 p-6 rounded-xl shadow-lg border border-dark-700 hover:border-brand/50 transition-all transform hover:-translate-y-1">
+                        <span class="inline-block px-3 py-1 bg-dark-700 text-gray-300 text-xs font-mono rounded-full mb-2">June 2024 - Present</span>
+                        <h3 class="text-xl font-bold text-white">Learning Facilitator</h3>
+                        <p class="text-brand font-medium mb-2">ALX Africa</p>
+                        <p class="text-gray-400 text-sm">Mentoring upcoming tech talent in Data Science and software engineering best practices.</p>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-gray-600 rounded-full border-4 border-dark-800 group-hover:bg-brand transition-colors"></div>
+                    <div class="bg-dark-900 p-6 rounded-xl shadow-lg border border-dark-700 hover:border-brand/50 transition-all transform hover:-translate-y-1">
+                        <span class="inline-block px-3 py-1 bg-dark-700 text-gray-300 text-xs font-mono rounded-full mb-2">July 2023 - Present</span>
+                        <h3 class="text-xl font-bold text-white">Data Analyst & Data Scientist</h3>
+                        <p class="text-brand font-medium mb-2">Write Smart Solution</p>
+                        <p class="text-gray-400 text-sm">Analyzing complex datasets to derive business intelligence and operational efficiency.</p>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-gray-600 rounded-full border-4 border-dark-800 group-hover:bg-brand transition-colors"></div>
+                    <div class="bg-dark-900 p-6 rounded-xl shadow-lg border border-dark-700 hover:border-brand/50 transition-all transform hover:-translate-y-1">
+                        <span class="inline-block px-3 py-1 bg-dark-700 text-gray-300 text-xs font-mono rounded-full mb-2">July 2022 - July 2023</span>
+                        <h3 class="text-xl font-bold text-white">Associate Consultant Data Scientist</h3>
+                        <p class="text-brand font-medium mb-2">Prognoz AI</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-   <section id="projects">
-    <h2>Projects</h2>
-    <div class="spinner" id="spinner"></div>
-    <div id="project-container">
-        
-        <div class="project-card">
-            <img src="Ai.jpg" alt="Financial Report Summarizer Preview" style="width:100%; height:auto;">
-            <h3>Financial Report Summarizer</h3>
-            <p>Dash app summarizing financial reports for actionable stakeholder insights.</p>
-            <button class="view-project-btn"><a href="https://github.com/OBAUDE95/Plotly-and-Dash-Langchain-Competition-by-Obaude-Ayodeji" target="_blank">View Project</a></button>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-dark-900">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Technical <span class="gradient-text">Skills</span></h2>
+                <p class="text-gray-400">Tools and technologies I use to build intelligent systems.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tech Stack Cloud -->
+                <div class="bg-dark-800 p-8 rounded-2xl shadow-xl border border-dark-700">
+                    <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-code text-brand"></i> Core Technologies
+                    </h3>
+                    <div class="flex flex-wrap gap-3" id="skills-container">
+                        <!-- Skills injected via JS or hardcoded below -->
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">GenAI</span>
+                        <span class="skill-pill">TensorFlow</span>
+                        <span class="skill-pill">PyTorch</span>
+                        <span class="skill-pill">Scikit-learn</span>
+                        <span class="skill-pill">Pandas</span>
+                        <span class="skill-pill">NumPy</span>
+                        <span class="skill-pill">SQL</span>
+                        <span class="skill-pill">FastAPI</span>
+                        <span class="skill-pill">Docker</span>
+                        <span class="skill-pill">LangChain</span>
+                        <span class="skill-pill">NLP</span>
+                        <span class="skill-pill">Git</span>
+                    </div>
+                </div>
+
+                <!-- Domain Expertise -->
+                <div class="bg-dark-800 p-8 rounded-2xl shadow-xl border border-dark-700">
+                    <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-brain text-brand"></i> Domain Expertise
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-300">Machine Learning Modeling</span>
+                                <span class="text-sm font-medium text-brand">95%</span>
+                            </div>
+                            <div class="w-full bg-dark-700 rounded-full h-2.5">
+                                <div class="bg-brand h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-300">Generative AI & LLMs</span>
+                                <span class="text-sm font-medium text-brand">90%</span>
+                            </div>
+                            <div class="w-full bg-dark-700 rounded-full h-2.5">
+                                <div class="bg-brand h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-300">Data Visualization</span>
+                                <span class="text-sm font-medium text-brand">85%</span>
+                            </div>
+                            <div class="w-full bg-dark-700 rounded-full h-2.5">
+                                <div class="bg-brand h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="project-card">
-            <img src="spam.jpg" alt="Spam and Ham Detection Preview" style="width:100%; height:auto;">
-            <h3>Spam and Ham Detection</h3>
-            <p>NLP model classifying emails as spam or ham with high accuracy.</p>
-            <button class="view-project-btn"><a href="https://github.com/OBAUDE95/Spam-Detection-using-TF-IDF-and-Machine-Learning" target="_blank">View Project</a></button>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="h-1 w-20 bg-brand mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- NEW: AI Sales Chatbot -->
+                <div class="bg-dark-900 rounded-xl overflow-hidden border border-dark-700 hover:border-brand/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/06b6d4?text=AI+Sales+Agent" alt="AI Sales Chatbot" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full">In Progress</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">AI Sales Chatbot Agent</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">An intelligent conversational agent capable of engaging customers, answering queries, and autonomously closing sales.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">GenAI</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">LLM</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: AI Quiz Generator -->
+                <div class="bg-dark-900 rounded-xl overflow-hidden border border-dark-700 hover:border-brand/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/06b6d4?text=AI+Quiz+Generator" alt="AI Quiz Generator" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white border border-white px-6 py-2 rounded-full">In Progress</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">AI Student Exam Generator</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">An educational AI tool that automatically generates custom exam questions and assessments based on user-selected topics.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">EdTech</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">NLP</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1 -->
+                <div class="bg-dark-900 rounded-xl overflow-hidden border border-dark-700 hover:border-brand/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/06b6d4?text=Financial+Summarizer" alt="Financial Report" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="https://github.com/OBAUDE95/Plotly-and-Dash-Langchain-Competition-by-Obaude-Ayodeji" target="_blank" class="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-dark-900 transition-colors">View Code</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Financial Report Summarizer</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">Dash app leveraging LangChain to summarize financial reports for actionable stakeholder insights.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Dash</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">LLM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-dark-900 rounded-xl overflow-hidden border border-dark-700 hover:border-brand/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/06b6d4?text=Spam+Detection" alt="Spam Detection" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="https://github.com/OBAUDE95/Spam-Detection-using-TF-IDF-and-Machine-Learning" target="_blank" class="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-dark-900 transition-colors">View Code</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Spam and Ham Detection</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">NLP model classifying emails as spam or ham with high accuracy using TF-IDF.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">NLP</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-dark-900 rounded-xl overflow-hidden border border-dark-700 hover:border-brand/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/06b6d4?text=Crime+Prediction" alt="Crime Prediction" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="https://github.com/OBAUDE95/Crime-Prediction-Model-in-Chicago" target="_blank" class="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-dark-900 transition-colors">View Code</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Crime Type Prediction</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">Predicting crime types and districts in Chicago using advanced ML algorithms.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Machine Learning</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-dark-900 rounded-xl overflow-hidden border border-dark-700 hover:border-brand/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/06b6d4?text=Diabetes+Classification" alt="Diabetes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="https://github.com/OBAUDE95/Diabetes-Classification-Using-Logistic-Regression" target="_blank" class="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-dark-900 transition-colors">View Code</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Diabetes Classification</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">Logistic regression model aiding early diabetes diagnosis with high precision.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Logistic Regression</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">HealthTech</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 5 -->
+                 <div class="bg-dark-900 rounded-xl overflow-hidden border border-dark-700 hover:border-brand/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/06b6d4?text=Car+Pricing+Dashboard" alt="Car Dashboard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="https://github.com/OBAUDE95/DataAnalysis-Competition" target="_blank" class="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-dark-900 transition-colors">View Code</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Car Sales Dashboard</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">Comprehensive analytics dashboard for car pricing, distribution, and foreign vs local comparisons.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Data Viz</span>
+                            <span class="text-xs bg-dark-700 text-brand px-2 py-1 rounded">Tableau/PowerBI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="project-card">
-            <img src="crime.jpg" alt="Crime Type Prediction Preview" style="width:100%; height:auto;">
-            <h3>Crime Type Prediction</h3>
-            <p>Predicted crime types and districts in Chicago using ML algorithms.</p>
-            <button class="view-project-btn"><a href="https://github.com/OBAUDE95/Crime-Prediction-Model-in-Chicago" target="_blank">View Project</a></button>
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-dark-900">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Edu 1 -->
+                <div class="bg-dark-800 p-6 rounded-lg border-b-4 border-brand hover:bg-dark-700 transition-colors relative overflow-hidden group">
+                    <!-- Subtle Glow Effect for Distinction -->
+                    <div class="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-brand/10 rounded-full blur-2xl group-hover:bg-brand/20 transition-all"></div>
+                    
+                    <div class="text-brand text-4xl mb-4 transform group-hover:scale-105 transition-transform"><i class="fas fa-user-graduate"></i></div>
+                    <h3 class="text-xl font-bold text-white">Achievers University</h3>
+                    <p class="text-gray-300 mt-2 font-semibold">M.Sc. Computer Science</p>
+                    <p class="text-sm text-gray-500 mt-1 mb-3">Oct 2024 - 2026</p>
+                    
+                    <!-- Distinction Badge -->
+                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-brand/20 text-brand border border-brand/40 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+                        <i class="fas fa-award mr-2"></i> Distinction • CGPA: 4.75
+                    </div>
+                </div>
+                <!-- Edu 2 -->
+                <div class="bg-dark-800 p-6 rounded-lg border-b-4 border-gray-600 hover:bg-dark-700 transition-colors">
+                    <div class="text-gray-400 text-4xl mb-4"><i class="fas fa-certificate"></i></div>
+                    <h3 class="text-xl font-bold text-white">Achievers University</h3>
+                    <p class="text-gray-300 mt-2">PGD Computer Science</p>
+                    <p class="text-sm text-brand mt-1 font-mono">CGPA: 4.74</p>
+                </div>
+                <!-- Edu 3 -->
+                <div class="bg-dark-800 p-6 rounded-lg border-b-4 border-gray-600 hover:bg-dark-700 transition-colors">
+                    <div class="text-gray-400 text-4xl mb-4"><i class="fas fa-university"></i></div>
+                    <h3 class="text-xl font-bold text-white">Adekunle Ajasin University</h3>
+                    <p class="text-gray-300 mt-2">B.Sc. Economics Education</p>
+                    <p class="text-sm text-gray-500 mt-1">Second Class Upper</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="project-card">
-            <img src="diabetes.jpg" alt="Diabetes Classification Preview" style="width:100%; height:auto;">
-            <h3>Diabetes Classification</h3>
-            <p>Logistic regression model aiding early diabetes diagnosis.</p>
-            <button class="view-project-btn"><a href="https://github.com/OBAUDE95/Diabetes-Classification-Using-Logistic-Regression" target="_blank">View Project</a></button>
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark-800 pt-16 pb-8 border-t border-dark-700">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Let's <span class="text-brand">Connect</span></h2>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto">
+                Whether you need a <span class="text-brand">Data Science solution</span> or a <span class="text-brand">Professional Portfolio</span> like this one, I'm here to help.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+                <a href="mailto:obaudeayodejimichael@gmail.com" class="flex items-center justify-center gap-3 px-6 py-4 bg-dark-700 rounded-lg hover:bg-dark-600 transition-colors text-white border border-transparent hover:border-brand/50">
+                    <i class="fas fa-envelope text-brand"></i>
+                    obaudeayodejimichael@gmail.com
+                </a>
+                <a href="tel:+2347061009114" class="flex items-center justify-center gap-3 px-6 py-4 bg-dark-700 rounded-lg hover:bg-dark-600 transition-colors text-white border border-transparent hover:border-brand/50">
+                    <i class="fas fa-phone text-brand"></i>
+                    +234 706 100 9114
+                </a>
+            </div>
+
+            <div class="border-t border-dark-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2024 Obaude Ayodeji Michael. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="https://github.com/OBAUDE95" class="hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/ayodeji-obaude-79b5051b2/" class="hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="https://x.com/obaudeayodeji" class="hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                </div>
+            </div>
         </div>
-
-
-        <div class="project-card">
-            <img src="car.jpg" alt="Comprehensive Car Pricing and Sales Insights Dashboard Preview" style="width:100%; height:auto;">
-            <h3>Comprehensive Car Pricing and Sales Insights Dashboard</h3>
-            <p>This dashboard provides a detailed analysis of car pricing and sales data, offering visualizations and insights into car prices, distribution by type, and comparisons between foreign and local vehicles.</p>
-            <button class="view-project-btn"><a href="https://github.com/OBAUDE95/DataAnalysis-Competition" target="_blank">View Project</a></button>
-        </div>
-
-        <div class="project-card">
-            <img src="fileorganizer.jpg" alt="Dynamic Technocrat File Organizer Preview" style="width:100%; height:auto;">
-            <h3>Dynamic Technocrat File Organizer</h3>
-            <p>A GUI-based file organizer that categorizes files into types and generates visual reports of file distribution.</p>
-            <button class="view-project-btn"><a href="https://github.com/OBAUDE95/Dynamic-Technocrat-File-Organizer" target="_blank">View Project</a></button>
-        </div>
-
-
-    </div>
-</section>
-
-    <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-info">
-        <p>Email: <a href="mailto:obaudeayodejimichael@gmail.com">obaudeayodejimichael@gmail.com</a></p>
-        <p>Phone: <a href="tel:+2347061009114">+234 706 100 9114</a></p>
-    </div>
-</section>
+    </footer>
 
     <script>
+        // Initialize Typed.js
         document.addEventListener('DOMContentLoaded', function () {
+            // Typed Effect
             new Typed('#typed-text', {
-                strings: ['Data Scientist', 'Python Developer', 'Machine Learning Engineer','Data Analyst'],
+                strings: ['Autonomous Agents', 'AI Sales Bots', 'EdTech Solutions', 'Machine Learning Models'],
                 typeSpeed: 50,
                 backSpeed: 30,
-                loop: true
+                loop: true,
+                backDelay: 2000
             });
 
-            // Loading Animation for Projects
-            const spinner = document.getElementById('spinner');
-            const projectContainer = document.getElementById('project-container');
-            const projectCards = document.querySelectorAll('.project-card');
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
 
-            spinner.style.display = 'block';
-
-            setTimeout(() => {
-                spinner.style.display = 'none';
-                projectCards.forEach((card, index) => {
-                    setTimeout(() => card.classList.add('show'), index * 200);
-                });
-            }, 1000);
-
-            // Animation for Skills
-            const skills = document.querySelectorAll('.skill');
-            skills.forEach((skill, index) => {
-                setTimeout(() => skill.classList.add('show'), index * 100);
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
             });
 
-            // Animation for Education Cards
-            const educationCards = document.querySelectorAll('.education-card');
-            educationCards.forEach((card, index) => {
-                setTimeout(() => card.classList.add('show'), index * 200);
+            // Add styling class to skill pills programmatically to save HTML space
+            const pills = document.querySelectorAll('.skill-pill');
+            pills.forEach(pill => {
+                pill.className = 'px-4 py-2 bg-dark-700 hover:bg-brand hover:text-white rounded-full text-sm text-gray-300 font-medium transition-all cursor-default select-none border border-transparent hover:border-brand-accent/50';
             });
         });
     </script>
