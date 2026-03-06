@@ -10,10 +10,16 @@
     
     <!-- Typed.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <!-- GSAP for Smooth Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
@@ -579,32 +585,7 @@
         </div>
     </footer>
 
-    <script>
-        // Initialize Typed.js
-        document.addEventListener('DOMContentLoaded', function () {
-            // Typed Effect
-            new Typed('#typed-text', {
-                strings: ['Autonomous Agents', 'AI Sales Bots', 'EdTech Solutions', 'Machine Learning Models'],
-                typeSpeed: 50,
-                backSpeed: 30,
-                loop: true,
-                backDelay: 2000
-            });
-
-            // Mobile Menu Toggle
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-
-            // Add styling class to skill pills programmatically to save HTML space
-            const pills = document.querySelectorAll('.skill-pill');
-            pills.forEach(pill => {
-                pill.className = 'px-4 py-2 bg-dark-700 hover:bg-brand hover:text-white rounded-full text-sm text-gray-300 font-medium transition-all cursor-default select-none border border-transparent hover:border-brand-accent/50';
-            });
-        });
-    </script>
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
